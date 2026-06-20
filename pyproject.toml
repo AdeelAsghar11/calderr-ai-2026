@@ -23,5 +23,3 @@ dependencies = [
     "streamlit>=1.35",
 ]
 
-[tool.uv]
-dev-dependencies = []
