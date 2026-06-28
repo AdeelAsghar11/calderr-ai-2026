@@ -20,7 +20,7 @@ console = Console()
 console.print(Rule("[bold cyan]RAG Pipeline Setup[/bold cyan]"))
 console.print("[dim]Step 1: Loading document...[/dim]")
 
-loader = TextLoader("./documents/ai_notes.txt", encoding="utf-8")
+loader = TextLoader("./labs/documents/ai_notes.txt", encoding="utf-8")
 docs = loader.load()
 console.print(f"[green]✓[/green] Loaded {len(docs)} document(s)")
 
