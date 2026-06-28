@@ -1,0 +1,47 @@
+# Agentic AI Engineering — Study Notes
+
+## Large Language Models (LLMs)
+
+Large Language Models are deep learning models trained on massive text datasets. They predict the next token given a sequence of previous tokens. The most important architecture powering all modern LLMs is the Transformer, introduced in the 2017 paper "Attention Is All You Need" by Vaswani et al.
+
+LLMs are trained in two main phases. Pre-training involves learning from massive text datasets using self-supervised learning. Fine-tuning involves aligning the model with human preferences using techniques like RLHF (Reinforcement Learning from Human Feedback) and instruction tuning.
+
+A token is the basic unit of text that LLMs process. On average, one token is approximately 4 characters or 0.75 words. The context window is the maximum number of tokens a model can process in a single call. Llama 3 supports up to 128,000 tokens.
+
+Temperature controls the randomness of LLM outputs. A temperature of 0 produces deterministic responses. A temperature of 1 produces balanced, natural responses. A temperature above 1 produces more creative and unpredictable responses. For agentic tasks, temperature should always be set to 0.
+
+## Agentic AI
+
+An AI agent is a system that combines an LLM with tools, memory, and a planning loop. Unlike a plain LLM call, an agent can perceive its environment, plan actions, execute tools, and observe results.
+
+The agent loop consists of four stages: Perceive, Plan, Act, and Observe. The agent receives input, reasons about what to do next, executes an action using a tool, observes the result, and repeats until it has a final answer.
+
+The ReAct pattern (Reasoning + Acting) is the foundation of modern agentic AI. In ReAct, the agent writes a Thought before every action. This forces explicit reasoning and reduces hallucination. The format is: Thought, Action, Action Input, Observation, repeated until Final Answer.
+
+## LangChain
+
+LangChain is a Python framework for building LLM-powered applications. The core abstraction is the Runnable, any component that implements invoke(), stream(), and batch() methods.
+
+LCEL (LangChain Expression Language) uses the pipe operator to chain Runnables together. A typical chain is: prompt | llm | output_parser. Each component takes the output of the previous component as its input.
+
+The main building blocks in LangChain are: ChatPromptTemplate for formatting prompts, ChatModel for calling the LLM, OutputParser for parsing responses, Retriever for fetching relevant documents, and Memory for maintaining conversation history.
+
+## RAG (Retrieval Augmented Generation)
+
+RAG is a technique that improves LLM responses by retrieving relevant information from a knowledge base before generating an answer. Instead of relying only on the model's training data, RAG provides fresh, specific context.
+
+The RAG pipeline has five steps. First, documents are loaded from files, URLs, or databases. Second, documents are split into smaller chunks. Third, each chunk is converted to an embedding vector. Fourth, the embeddings are stored in a vector database like ChromaDB. Fifth, at query time, the most relevant chunks are retrieved and injected into the LLM prompt.
+
+An embedding is a list of numbers (a vector) that represents the meaning of a piece of text. Texts with similar meanings have vectors that are close together in vector space. This allows semantic search — finding relevant content by meaning rather than exact keyword matching.
+
+ChromaDB is a lightweight, open-source vector database. It can run entirely in memory during development, requiring no external database server.
+
+## Groq
+
+Groq is an AI inference company that provides extremely fast LLM inference using their custom hardware called the LPU (Language Processing Unit). Groq offers a free tier with approximately 14,400 requests per day. Available models on Groq include llama-3.3-70b-versatile, llama-3.1-8b-instant, and mixtral-8x7b-32768.
+
+## Python for AI Engineering
+
+Type hints improve code readability and catch errors early. Use them on all function signatures. Pydantic is used for data validation and creating structured output models from LLM responses. Async functions with async/await allow multiple LLM calls to run concurrently, improving performance in production systems.
+
+Error handling is critical in agentic systems because LLM calls can fail due to rate limits, network issues, or invalid outputs. Always wrap LLM calls in try/except blocks and implement retry logic for production systems.
