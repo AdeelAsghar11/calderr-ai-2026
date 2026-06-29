@@ -2,6 +2,8 @@
 
 An advanced, multi-step research agent powered by Streamlit, LangChain, and Groq's `llama-3.3-70b-versatile` model. It takes any user-provided research question, dynamically plans subtopics to explore, researches them sequentially using structured outputs, and synthesizes a professional markdown report.
 
+**Live Demo:** [calderr-ai-2026-rmrfnctzakommgnpf3cqjc.streamlit.app](https://calderr-ai-2026-rmrfnctzakommgnpf3cqjc.streamlit.app)
+
 ## Features
 
 - **Dynamic Planning:** Generates a structured research plan consisting of 3 to 5 targeted, non-overlapping subtopics to systematically cover the main question.
