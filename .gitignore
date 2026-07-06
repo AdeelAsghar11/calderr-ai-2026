@@ -30,3 +30,6 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Logs
+agent_log.txt
