@@ -33,3 +33,7 @@ htmlcov/
 
 # Logs
 agent_log.txt
+
+# Local cache
+.cache/
+
