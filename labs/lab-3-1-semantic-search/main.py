@@ -43,7 +43,9 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
+# pyrefly: ignore [missing-import]
 from embedder import MODELS, SemanticEmbedder
+# pyrefly: ignore [missing-import]
 from sentences import CATEGORIES, SENTENCES
 
 # ── App & console setup ──────────────────────────────────────────────────────────

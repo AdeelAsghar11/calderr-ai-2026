@@ -1,0 +1,15 @@
+# Core — vector DB and embeddings
+chromadb>=0.5
+sentence-transformers>=3.0
+langchain-text-splitters>=0.3
+
+# Document fetching
+wikipedia>=1.4
+
+# FAISS (CPU-only; use faiss-gpu if you have CUDA)
+faiss-cpu>=1.8
+
+# CLI and display
+rich>=13.0
+typer>=0.12
+numpy>=1.24

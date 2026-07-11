@@ -37,3 +37,8 @@ agent_log.txt
 # Local cache
 .cache/
 
+# Chroma DB and downloaded data
+chroma_db/
+docs/
+
+
