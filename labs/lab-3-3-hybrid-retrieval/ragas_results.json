@@ -1,0 +1,102 @@
+{
+  "aggregates": {
+    "answer_relevancy": 0.6826118051214893,
+    "llm_context_precision_without_reference": 0.4333333333188889,
+    "context_recall": 0.5
+  },
+  "per_question": [
+    {
+      "user_input": "What is artificial intelligence?",
+      "retrieved_contexts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making. It is a field of research in engineering, mathematics and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximize their chances of achieving defined goals.",
+        "McCarthy defines intelligence as \"the computational part of the ability to achieve goals in the world\". Another AI founder, Marvin Minsky, similarly describes it as \"the ability to solve hard problems\". Artificial Intelligence: A Modern Approach defines it as the study of agents that perceive their environment and take actions that maximize their chances of achieving defined goals.",
+        "Machine learning is the study of programs that can improve their performance on a given task automatically. It has been a part of AI from the beginning.",
+        "Artificial intelligence provides a number of tools that are useful to bad actors, such as authoritarian governments, terrorists, criminals or rogue states.",
+        "A machine with artificial general intelligence would be able to solve a wide variety of problems with breadth and versatility similar to human intelligence.\n\nAI research uses a wide variety of techniques to accomplish the goals above.\n\nThere are two different kinds of search used in AI: state space search and local search:"
+      ],
+      "response": "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making. It involves the study of methods and software that enable machines to perceive their environment and take actions to achieve defined goals. McCarthy defines it as \"the computational part of the ability to achieve goals in the world\". AI is also described as \"the ability to solve hard problems\" by Marvin Minsky.",
+      "reference": "Artificial intelligence (AI) refers to the development of computer systems that can perform tasks that typically require human intelligence, such as learning, problem-solving, and decision-making. AI systems use algorithms and data to enable machines to think and act like humans, often using techniques like machine learning and natural language processing. These systems can be applied to various domains, including robotics, healthcare, and finance. AI aims to create intelligent machines that can assist and augment human capabilities.",
+      "faithfulness": NaN,
+      "answer_relevancy": 1.0,
+      "llm_context_precision_without_reference": 0.8666666666377778,
+      "context_recall": NaN
+    },
+    {
+      "user_input": "What happened at the Dartmouth Conference in 1956?",
+      "retrieved_contexts": [
+        "AAAI Conference on Artificial Intelligence\nAssociation for Computational Linguistics (ACL)\nEuropean Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML PKDD)\nInternational Conference on Computational Intelligence Methods for Bioinformatics and Biostatistics (CIBB)\nInternational Conference on Machine Learning (ICML)\nInternational Conference on Learning Representations (ICLR)\nInternational Conference on Intelligent Robots and Systems (IROS)",
+        "Conference on Knowledge Discovery and Data Mining (KDD)\nConference on Neural Information Processing Systems (NeurIPS)",
+        "In November 2023, the first global AI Safety Summit was held in Bletchley Park in the UK to discuss the near and far term risks of AI and the possibility of mandatory and voluntary regulatory frameworks. 28 countries including the United States, China, and the European Union issued a declaration at the start of the summit, calling for international co-operation to manage the challenges and risks of artificial intelligence",
+        "In 2016, issues of fairness and the misuse of technology were catapulted into center stage at machine learning conferences, publications vastly increased, funding became available, and many researchers re-focussed their careers on these issues. The alignment problem became a serious field of academic study.",
+        ". They and their students produced programs that the press described as \"astonishing\": computers were learning checkers strategies, solving word problems in algebra, proving logical theorems and speaking English. Artificial intelligence laboratories were set up at a number of British and U.S. universities in the latter 1950s and early 1960s."
+      ],
+      "response": "The documents do not contain this information.",
+      "reference": "The Dartmouth Conference, held in 1956, is considered the birthplace of artificial intelligence (AI) as a field of research. It was organized by John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon, who proposed the term \"Artificial Intelligence\" to describe the study of intelligent machines. The conference aimed to explore ways to create machines that could simulate human intelligence, and it laid the foundation for AI research in the following decades. The conference led to the establishment of AI as a distinct field of study.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.07564259439841049,
+      "llm_context_precision_without_reference": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "What is supervised learning in machine learning?",
+      "retrieved_contexts": [
+        "Supervised learning algorithms build a mathematical model of a set of data that contains both the inputs and the desired outputs. The data, known as training data, consists of a set of training examples. Each training example has one or more inputs and the desired output, also known as a supervisory signal. In the mathematical model, each training example is represented by an array or vector, sometimes called a feature vector, and the training data is represented by a matrix",
+        "There are several kinds of machine learning. Unsupervised learning analyzes a stream of data and finds patterns and makes predictions without any other guidance. Supervised learning requires labeling the training data with the expected answers, and comes in two main varieties: classification (where the program must learn to predict what category the input belongs in) and regression (where the program must deduce a numeric function based on numeric input).",
+        "Supervised learning: The computer is presented with example inputs and their desired outputs, given by a \"teacher\", and the goal is to learn a general rule that maps inputs to outputs.\nUnsupervised learning: No labels are given to the learning algorithm, leaving it on its own to find structure in its input. Unsupervised learning can be a goal in itself (discovering hidden patterns in data) or a means towards an end (feature learning).",
+        "Machine learning is the study of programs that can improve their performance on a given task automatically. It has been a part of AI from the beginning.",
+        "Machine learning (ML) is a field of study in artificial intelligence concerned with the development and study of statistical algorithms that can learn from  data and generalize to unseen data, and thus perform tasks without being explicitly programmed. Advances in the field of deep learning have allowed neural networks, a class of statistical algorithms, to surpass many previous machine learning approaches in performance."
+      ],
+      "response": "Supervised learning is a type of machine learning where the computer is presented with example inputs and their desired outputs, and the goal is to learn a general rule that maps inputs to outputs. The training data is labeled with the expected answers, and it comes in two main varieties: classification and regression. The computer uses this labeled data to build a mathematical model that can make predictions.",
+      "reference": "Supervised learning is a type of machine learning where the model is trained on labeled data, meaning the data is already tagged with the correct output. The goal is to learn a mapping between input data and the corresponding output labels, allowing the model to make predictions on new, unseen data. The model learns from the labeled data by adjusting its parameters to minimize the error between its predictions and the actual labels. This approach enables the model to learn from experience and improve its performance over time.",
+      "faithfulness": NaN,
+      "answer_relevancy": 1.0,
+      "llm_context_precision_without_reference": NaN,
+      "context_recall": NaN
+    },
+    {
+      "user_input": "What is overfitting and how does it affect model performance?",
+      "retrieved_contexts": [
+        "Settling on a bad, overly complex theory gerrymandered to fit all the past training data is known as overfitting. Many systems attempt to reduce overfitting by rewarding a theory in accordance with how well it fits the data but penalising the theory in accordance with how complex the theory is.",
+        "Typically, machine learning models require a high quantity of reliable data to perform accurate predictions. When training a machine learning model, machine learning engineers need to target and collect a large and representative sample of data. Data from the training set can be as varied as a corpus of text, a collection of images, sensor data, and data collected from individual users of a service. Overfitting is something to watch out for when training a machine learning model",
+        "As with ANNs, many issues can arise with naively trained DNNs. Two common issues are overfitting and computation time.\nDNNs are prone to overfitting because of the added layers of abstraction, which allow them to model rare dependencies in the training data. Regularization methods such as Ivakhnenko's unit pruning or weight decay (\n  \n    \n      \n        \n          \u2113\n          \n            2\n          \n        \n      \n    \n    {\\displaystyle \\ell _{2}}\n  \n-regularization) or sparsity (",
+        "For the best performance in the context of generalisation, the complexity of the hypothesis should match the complexity of the function underlying the data. If the hypothesis is less complex than the function, then the model has underfitted the data. If the complexity of the model is increased in response, then the training error decreases. But if the hypothesis is too complex, then the model is subject to overfitting and generalisation will be poorer.",
+        ". Finally, data can be augmented via methods such as cropping and rotating such that smaller training sets can be increased in size to reduce the chances of overfitting."
+      ],
+      "response": "Overfitting occurs when a model is too complex and fits the training data too closely, resulting in poor generalization performance. It happens when a model is \"gerrymandered\" to fit all the past training data, leading to decreased performance on new, unseen data. Overfitting causes a model to perform well on the training data but poorly on new data, resulting in poorer generalization. This can be mitigated by penalizing complex models or using regularization methods.",
+      "reference": "Overfitting occurs when a model is too complex and learns the noise in the training data, resulting in poor performance on new, unseen data. This happens when the model is overly specialized to the training set and fails to generalize well to other data. As a result, the model's performance on the training data is excellent, but its performance on test data is poor, leading to a significant decrease in accuracy and reliability. Overfitting can be mitigated through techniques such as regularization, early stopping, and cross-validation.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.4489074680123173,
+      "llm_context_precision_without_reference": NaN,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "What is backpropagation and how does it work?",
+      "retrieved_contexts": [
+        "Backpropagation is an efficient application of the chain rule derived by Gottfried Wilhelm Leibniz in 1673 to networks of differentiable nodes. The terminology \"back-propagating errors\" was actually introduced in 1962 by Rosenblatt, but he did not know how to implement this, although Henry J. Kelley had a continuous precursor of backpropagation in 1960 in the context of control theory. The modern form of backpropagation was first published in Seppo Linnainmaa's master thesis (1970). G.M. Ostrovski et al",
+        "Learning algorithms for neural networks use local search to choose the weights that will get the right output for each input during training. The most common training technique is the backpropagation algorithm. Neural networks learn to model complex relationships between inputs and outputs and find patterns in data. In theory, a neural network can learn any function.",
+        "a\n      \n    \n    {\\displaystyle a}\n  \n. It does not use an external reinforcement, it only uses the agent internal self-reinforcement. The internal self-reinforcement is provided by mechanism of feelings and emotions. In the learning process emotions are backpropagated by a mechanism of secondary reinforcement. The learning equation does not include the immediate reward, it only includes the state evaluation.\nThe self-reinforcement algorithm updates a memory matrix \n  \n    \n      \n        W",
+        "The original goal of the neural network approach was to solve problems in the same way that a human brain would. Over time, attention focused on matching specific mental abilities, leading to deviations from biology such as backpropagation, or passing information in the reverse direction and adjusting the network to reflect that information.",
+        "A variety of approaches have been used to investigate the plausibility of deep learning models from a neurobiological perspective. On the one hand, several variants of the backpropagation algorithm have been proposed in order to increase its processing realism. Other researchers have argued that unsupervised forms of deep learning, such as those based on hierarchical generative models and deep belief networks, may be closer to biological reality"
+      ],
+      "response": "Backpropagation is an efficient application of the chain rule to networks of differentiable nodes. It involves back-propagating errors to adjust the network and reflect the information. The modern form of backpropagation was first published in 1970 by Seppo Linnainmaa. It is used to train neural networks and update weights to model complex relationships between inputs and outputs.",
+      "reference": "Backpropagation is an essential algorithm in machine learning used to train artificial neural networks. It works by calculating the error between the network's predicted output and the actual output, then propagating this error backwards through the network to adjust the weights and biases of the neurons. This process minimizes the loss function, allowing the network to learn from its mistakes and improve its performance. The algorithm iteratively updates the model's parameters to reduce the error and optimize the network's predictions.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.888508963196719,
+      "llm_context_precision_without_reference": NaN,
+      "context_recall": NaN
+    }
+  ],
+  "questions": [
+    "What is artificial intelligence?",
+    "What happened at the Dartmouth Conference in 1956?",
+    "What is supervised learning in machine learning?",
+    "What is overfitting and how does it affect model performance?",
+    "What is backpropagation and how does it work?"
+  ],
+  "n_questions": 5,
+  "metrics": [
+    "answer_relevancy",
+    "llm_context_precision_without_reference",
+    "context_recall"
+  ]
+}

@@ -34,6 +34,12 @@ from __future__ import annotations
 
 import hashlib
 import os
+import sys
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
 import textwrap
 import time
 from pathlib import Path
@@ -48,7 +54,9 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
+# pyrefly: ignore [missing-import]
 from hybrid_retriever import HybridRetriever
+# pyrefly: ignore [missing-import]
 from reranker import CrossEncoderReranker
 
 load_dotenv(find_dotenv())
