@@ -1,0 +1,53 @@
+{
+  "query": "What is the current state of AI regulation globally?",
+  "title": "Current State of AI Regulation Globally",
+  "summary": "The current state of AI regulation globally is not explicitly addressed in the provided sources [1-5]. However, the sources do provide information on the definition and meaning of the term \"current\" [3, 4]. The term \"current\" refers to something that is occurring in or existing at the present time [3]. Additionally, the sources discuss various concepts related to finance and electricity, but do not provide information on AI regulation [1, 2].",
+  "key_findings": [
+    "The term \"current\" is defined as something that is occurring in or existing at the present time [3].",
+    "The sources provided do not address the current state of AI regulation globally [1-5]."
+  ],
+  "detailed_analysis": "The research question regarding the current state of AI regulation globally cannot be answered based on the provided sources [1-5]. The sources primarily focus on the definition and meaning of the term \"current\" [3, 4], as well as concepts related to finance and electricity [1, 2]. There is no mention of AI regulation in any of the sources. To answer the research question, additional sources that specifically address AI regulation would be necessary.",
+  "citations": [
+    {
+      "number": 1,
+      "source": "web",
+      "title": "Electric current - Wikipedia — https://en.wikipedia.org/wiki/Electric_current",
+      "url": "https://en.wikipedia.org/wiki/Electric_current",
+      "snippet": "Electric current - Wikipedia Since current can be the flow of either positive or negative charges, or both, a convention is needed for the direction of current that is independent of the type of charg"
+    },
+    {
+      "number": 2,
+      "source": "web",
+      "title": "Current | Future of Banking — https://current.com/",
+      "url": "https://current.com/",
+      "snippet": "Current | Future of Banking When you buy or sell cryptocurrency, a difference between the current market price and the price you buy or sell that asset for is called a spread. However, unlike most oth"
+    },
+    {
+      "number": 3,
+      "source": "web",
+      "title": "CURRENT Definition & Meaning - Merriam-Webster — https://www.merriam-webster.com/dictionary/current",
+      "url": "https://www.merriam-webster.com/dictionary/current",
+      "snippet": "CURRENT Definition & Meaning - Merriam-Webster 6 days ago · The meaning of CURRENT is occurring in or existing at the present time. How to use current in a sentence. Synonym Discussion of Current."
+    },
+    {
+      "number": 4,
+      "source": "web",
+      "title": "CURRENT | English meaning - Cambridge Dictionary — https://dictionary.cambridge.org/dictionary/english/current",
+      "url": "https://dictionary.cambridge.org/dictionary/english/current",
+      "snippet": "CURRENT | English meaning - Cambridge Dictionary CURRENT definition: 1. of the present time: 2. a movement of water, air, or electricity in a particular direction: 3…. Learn more."
+    },
+    {
+      "number": 5,
+      "source": "web",
+      "title": "current suomeksi - Sanakirja.org käännös — https://www.sanakirja.org/search.php?id=17546&l2=17",
+      "url": "https://www.sanakirja.org/search.php?id=17546&l2=17",
+      "snippet": "current suomeksi - Sanakirja.org käännös The part of a fluid that moves continuously in a certain direction, especially (oceanography) Ellipsis of ocean current. Virran osa, joka liikkuu jatkuvasti ti"
+    }
+  ],
+  "routing_decision": "web",
+  "sources_used": [
+    "web"
+  ],
+  "timestamp": "2026-07-13T16:53:33.270066+00:00",
+  "report_id": "f75bcbcc"
+}

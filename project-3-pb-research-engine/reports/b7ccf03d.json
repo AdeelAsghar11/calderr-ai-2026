@@ -1,0 +1,90 @@
+{
+  "query": "How is reinforcement learning being applied in real products today?",
+  "title": "Reinforcement Learning in Real-World Products",
+  "summary": "Reinforcement learning (RL) is being applied to various real-world problems, including energy storage, robot control, and autonomous driving systems [5]. Despite its potential, RL faces several challenges and limitations that hinder its widespread application [3]. RL is particularly well-suited to problems that involve a long-term versus short-term reward trade-off [5]. The technology has been successfully applied to games like backgammon, checkers, and Go (AlphaGo) [5]. RL is also being used in industry, such as in quality control for automatic inspection of products [9].",
+  "key_findings": [
+    "Reinforcement learning is being applied to problems that include a long-term versus short-term reward trade-off [5].",
+    "RL has been successfully applied to various problems, including energy storage, robot control, photovoltaic generators, and autonomous driving systems [5].",
+    "Despite significant advancements, reinforcement learning continues to face several challenges and limitations [3]."
+  ],
+  "detailed_analysis": "Reinforcement learning is a type of machine learning where a computer program interacts with a dynamic environment to achieve a certain goal [7]. The program receives rewards as feedback, which it tries to maximize, thus resulting in the program learning from experience [7]. RL has been applied to various real-world problems, including energy storage, robot control, and autonomous driving systems [5]. The technology has also been used in games like backgammon, checkers, and Go (AlphaGo) [5]. However, RL faces several challenges and limitations that hinder its widespread application [3]. These challenges may include the need for large amounts of data, the complexity of the problem space, and the difficulty of defining rewards [3]. Despite these challenges, RL has the potential to be applied to a wide range of problems, including those that involve a long-term versus short-term reward trade-off [5].\nThe application of RL in industry is also significant, with examples including quality control for automatic inspection of products [9]. In this context, RL can be used to optimize the inspection process and improve the accuracy of defect detection [9]. Additionally, RL can be used in financial applications, such as fraud detection and anti-money laundering [1]. However, the use of RL in these applications is not well-documented in the provided sources.\nIt is worth noting that the concept of reinforcement is not limited to machine learning, but also has a broader meaning in psychology and education [2, 4, 6, 8, 10]. In these contexts, reinforcement refers to the process of strengthening or encouraging behavior through rewards or punishments [8, 10]. While this concept is related to the idea of reinforcement learning, it is a distinct concept that is not directly relevant to the application of RL in real-world products.",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Deep learning",
+      "url": "https://en.wikipedia.org/wiki/Deep_learning",
+      "snippet": "Deep learning has been successfully applied to inverse problems such as denoising, super-resolution, inpainting, and film colorization. These applications include learning methods such as \"Shrinkage F"
+    },
+    {
+      "number": 2,
+      "source": "web",
+      "title": "Reinforcement - Wikipedia — https://en.wikipedia.org/wiki/Reinforcement",
+      "url": "https://en.wikipedia.org/wiki/Reinforcement",
+      "snippet": "Reinforcement - Wikipedia Reinforcement is the central concept and procedure in special education, applied behavior analysis, and the experimental analysis of …"
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Reinforcement learning",
+      "url": "https://en.wikipedia.org/wiki/Reinforcement_learning",
+      "snippet": "Despite significant advancements, reinforcement learning (RL) continues to face several challenges and limitations that hinder its widespread application in real-world scenarios."
+    },
+    {
+      "number": 4,
+      "source": "web",
+      "title": "REINFORCEMENT | English meaning - Cambridge Dictionary — https://dictionary.cambridge.org/dictionary/english/reinforcement",
+      "url": "https://dictionary.cambridge.org/dictionary/english/reinforcement",
+      "snippet": "REINFORCEMENT | English meaning - Cambridge Dictionary REINFORCEMENT definition: 1. the act of making something stronger: 2. soldiers sent to join an army to make it stronger: 3…. Learn more."
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Reinforcement learning",
+      "url": "https://en.wikipedia.org/wiki/Reinforcement_learning",
+      "snippet": "Thus, reinforcement learning is particularly well-suited to problems that include a long-term versus short-term reward trade-off. It has been applied successfully to various problems, including energy"
+    },
+    {
+      "number": 6,
+      "source": "web",
+      "title": "REINFORCEMENT Definition & Meaning - Merriam-Webster — https://www.merriam-webster.com/dictionary/reinforcement",
+      "url": "https://www.merriam-webster.com/dictionary/reinforcement",
+      "snippet": "REINFORCEMENT Definition & Meaning - Merriam-Webster 5 days ago · The meaning of REINFORCEMENT is the action of strengthening or encouraging something : the state of being reinforced. How …"
+    },
+    {
+      "number": 7,
+      "source": "local",
+      "title": "Local knowledge base — Machine learning",
+      "url": "https://en.wikipedia.org/wiki/Machine_learning",
+      "snippet": "Reinforcement learning: A computer program interacts with a dynamic environment in which it must perform a certain goal (such as driving a vehicle or playing a game against an opponent). As it navigat"
+    },
+    {
+      "number": 8,
+      "source": "web",
+      "title": "Types of Reinforcement in Psychology: Definition and Examples — https://www.explorepsychology.com/reinforcement-definition/",
+      "url": "https://www.explorepsychology.com/reinforcement-definition/",
+      "snippet": "Types of Reinforcement in Psychology: Definition and Examples May 7, 2023 · Reinforcement strengthens behavior. Learn more about the reinforcement definition in psychology, along with examples …"
+    },
+    {
+      "number": 9,
+      "source": "local",
+      "title": "Local knowledge base — Computer vision",
+      "url": "https://en.wikipedia.org/wiki/Computer_vision",
+      "snippet": "A second application area in computer vision is in industry, sometimes called machine vision, where information is extracted for the purpose of supporting a production process. One example is quality "
+    },
+    {
+      "number": 10,
+      "source": "web",
+      "title": "REINFORCEMENT definition | Cambridge English Dictionary — https://dictionary.cambridge.org/us/dictionary/english/reinforcement",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/reinforcement",
+      "snippet": "REINFORCEMENT definition | Cambridge English Dictionary Reinforcement is also a way of influencing behavior through rewards and punishments: positive / negative reinforcement (Definition …"
+    }
+  ],
+  "routing_decision": "both",
+  "sources_used": [
+    "local",
+    "web"
+  ],
+  "timestamp": "2026-07-13T16:51:30.021931+00:00",
+  "report_id": "b7ccf03d"
+}

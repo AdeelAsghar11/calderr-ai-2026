@@ -41,8 +41,11 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
+# pyrefly: ignore [missing-import]
 from hybrid_retriever import HybridRetriever, CHROMA_PATH, COLLECTION_NAME, EMBEDDING_MODEL
+# pyrefly: ignore [missing-import]
 from reranker import CrossEncoderReranker
+# pyrefly: ignore [missing-import]
 from multiquery import MultiQueryPipeline
 
 load_dotenv(find_dotenv())

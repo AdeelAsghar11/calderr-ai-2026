@@ -1,0 +1,55 @@
+{
+  "query": "Explain backpropagation and how neural networks learn",
+  "title": "Backpropagation and Neural Network Learning",
+  "summary": "Neural networks learn to model complex relationships between inputs and outputs and find patterns in data through the use of learning algorithms, with the most common technique being the backpropagation algorithm [1]. Backpropagation is an efficient application of the chain rule, derived by Gottfried Wilhelm Leibniz in 1673, to networks of differentiable nodes [2]. The goal of neural networks is to solve problems in a way similar to the human brain, but has deviated from biology with techniques such as backpropagation [5]. Neural networks can learn any function in theory [1]. The development of backpropagation has a history that dates back to the 1960s and 1970s, with key contributions from researchers such as Rosenblatt and Seppo Linnainmaa [2].",
+  "key_findings": [
+    "Neural networks use learning algorithms, such as backpropagation, to choose the weights that will get the right output for each input during training [1].",
+    "Backpropagation is an efficient application of the chain rule, derived by Gottfried Wilhelm Leibniz in 1673, to networks of differentiable nodes [2].",
+    "The modern form of backpropagation was first published in Seppo Linnainmaa's master thesis in 1970 [2].",
+    "Artificial neural networks (ANNs) learn to do tasks by considering examples, generally without task-specific programming [4]."
+  ],
+  "detailed_analysis": "The backpropagation algorithm is a crucial component of neural network learning, allowing these systems to model complex relationships between inputs and outputs [1]. The history of backpropagation is rooted in the work of Gottfried Wilhelm Leibniz, who derived the chain rule in 1673, and was later developed by researchers such as Rosenblatt and Seppo Linnainmaa [2]. The modern form of backpropagation, as published in Seppo Linnainmaa's master thesis in 1970, has become a standard technique in deep learning [2]. Neural networks, including feedforward, recurrent, and long short-term memory networks, are designed to learn from examples and improve their performance over time [3, 4]. The goal of neural networks is to solve problems in a way similar to the human brain, but has deviated from biology with techniques such as backpropagation, which passes information in the reverse direction and adjusts the network to reflect that information [5].\nThe development of backpropagation has enabled neural networks to learn complex patterns in data, making them a powerful tool in artificial intelligence [1]. The use of backpropagation in deep learning has led to significant advances in areas such as image and speech recognition, natural language processing, and decision-making [4]. However, the deviation from biological systems, such as the use of backpropagation, has also raised questions about the limitations and potential biases of neural networks [5]. Despite these challenges, neural networks remain a key area of research in artificial intelligence, with ongoing efforts to improve their performance, efficiency, and interpretability [1, 4].",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Artificial intelligence",
+      "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+      "snippet": "Learning algorithms for neural networks use local search to choose the weights that will get the right output for each input during training. The most common training technique is the backpropagation "
+    },
+    {
+      "number": 2,
+      "source": "local",
+      "title": "Local knowledge base — Deep learning",
+      "url": "https://en.wikipedia.org/wiki/Deep_learning",
+      "snippet": "Backpropagation is an efficient application of the chain rule derived by Gottfried Wilhelm Leibniz in 1673 to networks of differentiable nodes. The terminology \"back-propagating errors\" was actually i"
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Artificial intelligence",
+      "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+      "snippet": "In feedforward neural networks the signal passes in only one direction. The term perceptron typically refers to a single-layer neural network. In contrast, deep learning uses many layers. Recurrent ne"
+    },
+    {
+      "number": 4,
+      "source": "local",
+      "title": "Local knowledge base — Deep learning",
+      "url": "https://en.wikipedia.org/wiki/Deep_learning",
+      "snippet": "Artificial neural networks (ANNs) or connectionist systems are computing systems inspired by the biological neural networks that constitute animal brains. Such systems learn (progressively improve the"
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Deep learning",
+      "url": "https://en.wikipedia.org/wiki/Deep_learning",
+      "snippet": "The original goal of the neural network approach was to solve problems in the same way that a human brain would. Over time, attention focused on matching specific mental abilities, leading to deviatio"
+    }
+  ],
+  "routing_decision": "local",
+  "sources_used": [
+    "local"
+  ],
+  "timestamp": "2026-07-13T16:50:44.457262+00:00",
+  "report_id": "a05b473a"
+}

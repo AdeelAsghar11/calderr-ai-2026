@@ -1,0 +1,56 @@
+{
+  "query": "How is reinforcement learning being applied in real products today?",
+  "title": "Reinforcement Learning in Real-World Products",
+  "summary": "Reinforcement learning (RL) is being applied to various real-world problems, including those that involve a long-term versus short-term reward trade-off [3]. Despite facing challenges and limitations, RL has been successfully applied to areas such as energy storage, robot control, and autonomous driving systems [3]. The technology is also being used in other fields, including computer vision, where it can be used for quality control and inspection [5]. However, the limitations of RL must be considered, as it is not suitable for all problems [2]. RL algorithms learn from experience and feedback, allowing them to maximize rewards and achieve goals [4].",
+  "key_findings": [
+    "Reinforcement learning is well-suited to problems that involve a long-term versus short-term reward trade-off [3].",
+    "RL has been applied to various real-world problems, including energy storage, robot control, and autonomous driving systems [3].",
+    "The technology is also being used in computer vision for quality control and inspection [5].",
+    "RL algorithms learn from experience and feedback, allowing them to maximize rewards and achieve goals [4].",
+    "Despite advancements, RL continues to face several challenges and limitations that hinder its widespread application [2]."
+  ],
+  "detailed_analysis": "Reinforcement learning is a type of machine learning that involves a computer program interacting with a dynamic environment to achieve a certain goal [4]. The program learns from experience and feedback, in the form of rewards, which it tries to maximize [4]. This approach is particularly well-suited to problems that involve a long-term versus short-term reward trade-off, such as energy storage and autonomous driving systems [3]. In these areas, RL has been successfully applied, allowing for more efficient and effective decision-making [3]. However, the limitations of RL must be considered, as it is not suitable for all problems [2]. For example, RL may not be effective in situations where the reward structure is not well-defined or where the environment is highly complex [2].\nThe application of RL in computer vision is also an area of interest, particularly in industry, where it can be used for quality control and inspection [5]. In this context, RL can be used to learn from experience and feedback, allowing for more accurate and efficient inspection and defect detection [5]. However, the challenges and limitations of RL must still be considered, as they can impact the effectiveness of the technology in these areas [2].\nOverall, the application of RL in real-world products is a growing area of research and development, with potential applications in a wide range of fields [3]. However, the challenges and limitations of the technology must be carefully considered, in order to ensure that it is used effectively and efficiently [2].",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Deep learning",
+      "url": "https://en.wikipedia.org/wiki/Deep_learning",
+      "snippet": "Deep learning has been successfully applied to inverse problems such as denoising, super-resolution, inpainting, and film colorization. These applications include learning methods such as \"Shrinkage F"
+    },
+    {
+      "number": 2,
+      "source": "local",
+      "title": "Local knowledge base — Reinforcement learning",
+      "url": "https://en.wikipedia.org/wiki/Reinforcement_learning",
+      "snippet": "Despite significant advancements, reinforcement learning (RL) continues to face several challenges and limitations that hinder its widespread application in real-world scenarios."
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Reinforcement learning",
+      "url": "https://en.wikipedia.org/wiki/Reinforcement_learning",
+      "snippet": "Thus, reinforcement learning is particularly well-suited to problems that include a long-term versus short-term reward trade-off. It has been applied successfully to various problems, including energy"
+    },
+    {
+      "number": 4,
+      "source": "local",
+      "title": "Local knowledge base — Machine learning",
+      "url": "https://en.wikipedia.org/wiki/Machine_learning",
+      "snippet": "Reinforcement learning: A computer program interacts with a dynamic environment in which it must perform a certain goal (such as driving a vehicle or playing a game against an opponent). As it navigat"
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Computer vision",
+      "url": "https://en.wikipedia.org/wiki/Computer_vision",
+      "snippet": "A second application area in computer vision is in industry, sometimes called machine vision, where information is extracted for the purpose of supporting a production process. One example is quality "
+    }
+  ],
+  "routing_decision": "both",
+  "sources_used": [
+    "local"
+  ],
+  "timestamp": "2026-07-13T15:14:07.192752+00:00",
+  "report_id": "1c65e123"
+}

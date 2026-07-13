@@ -1,0 +1,90 @@
+{
+  "query": "How does RAG compare to the latest fine-tuned models?",
+  "title": "RAG vs. Fine-Tuned Models",
+  "summary": "Retrieval-augmented generation (RAG) is a method used to improve the accuracy of large language models (LLMs) by blending the LLM process with a web search or other document look-up process [7]. While RAG reduces the need for frequent model retraining and provides greater transparency, it does not eliminate all challenges, such as hallucinations and incorrect information [1, 5, 9]. RAG is used to prevent errors, but it does not solve all problems, and LLMs can still generate misinformation even when pulling from factually correct sources [9].",
+  "key_findings": [
+    "RAG improves the accuracy of LLMs by reducing the need for frequent model retraining [1].",
+    "RAG provides greater transparency by allowing LLMs to include sources in their responses, enabling users to verify the cited sources [3].",
+    "RAG does not prevent hallucinations in LLMs, as the model can still hallucinate around the source material in its response [5]."
+  ],
+  "detailed_analysis": "RAG is a method used to improve LLM performance by incorporating a web search or document look-up process into the LLM process [7]. This approach helps reduce AI hallucinations, which can cause chatbots to provide incorrect information [7]. However, RAG does not eliminate all challenges, such as the need for occasional model retraining [1] and the potential for LLMs to generate misinformation even when pulling from factually correct sources [9]. Additionally, LLMs may struggle to recognize when they lack sufficient information to provide a reliable response, and may generate answers even when they should indicate uncertainty [1]. Despite these limitations, RAG provides greater transparency by allowing LLMs to include sources in their responses, enabling users to verify the cited sources [3]. This transparency is essential in preventing the spread of misinformation and ensuring the accuracy of LLM-generated content.\nThe use of RAG can also help reduce computational and financial costs associated with frequent model retraining [3]. By incorporating a web search or document look-up process into the LLM process, RAG can provide more accurate and up-to-date information, reducing the need for model retraining [3]. However, it is essential to note that RAG is not a direct solution to all LLM challenges, and further research is needed to address the limitations of this approach [5].\nIn comparison to fine-tuned models, RAG offers a more efficient and transparent approach to improving LLM performance [3, 7]. While fine-tuned models may provide more accurate results in specific domains, RAG can provide more generalizable and up-to-date information by incorporating a web search or document look-up process [7]. However, the effectiveness of RAG in comparison to fine-tuned models depends on the specific use case and the quality of the training data [1, 9].",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "While RAG improves the accuracy of large language models (LLMs), it does not eliminate all challenges. One limitation is that while RAG reduces the need for frequent model retraining, it does not remo"
+    },
+    {
+      "number": 2,
+      "source": "web",
+      "title": "Jetzt im TV - Das aktuelle TV-Programm - TV SPIELFILM — https://www.tvspielfilm.de/tv-programm/sendungen/jetzt.html",
+      "url": "https://www.tvspielfilm.de/tv-programm/sendungen/jetzt.html",
+      "snippet": "Jetzt im TV - Das aktuelle TV-Programm - TV SPIELFILM Das aktuelle TV-Programm heute Wer seinen Blick in die rechte Spalte richtet, hat einen weiteren Vorteil bei TV SPIELFILM: Hier ist bei positiv be"
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "RAG also reduces the need to retrain LLMs with new data, saving on computational and financial costs. Beyond efficiency gains, RAG also allows LLMs to include sources in their responses, so users can "
+    },
+    {
+      "number": 4,
+      "source": "web",
+      "title": "TV Programm Spielfilme - Blockbuster im Fernsehprogramm - TV … — https://www.tvspielfilm.de/tv-programm/spielfilme/",
+      "url": "https://www.tvspielfilm.de/tv-programm/spielfilme/",
+      "snippet": "TV Programm Spielfilme - Blockbuster im Fernsehprogramm - TV … TV Programm Spielfilm - alle Spielfilme und Blockbuster heute im TV Spielfilme im TV Gestern heute Di Mi Do Fr Sa So diese Woche nächste "
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "RAG does not prevent hallucinations in LLMs. According to Ars Technica, \"It is not a direct solution because the LLM can still hallucinate around the source material in its response.\""
+    },
+    {
+      "number": 6,
+      "source": "web",
+      "title": "Das TV Programm von gestern — https://www.tvspielfilm.de/tv-programm/gestern/",
+      "url": "https://www.tvspielfilm.de/tv-programm/gestern/",
+      "snippet": "Das TV Programm von gestern Informationen zu Spielfilmen, Serien und Shows von ARD bis ProSieben: Auf dieser Seite ist ales zu finden, was gestern Abend im TV-Programm zu sehen war. Das TV-Programm vo"
+    },
+    {
+      "number": 7,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": ". According to Ars Technica, \"RAG is a way of improving LLM performance, in essence by blending the LLM process with a web search or other document look-up process to help LLMs stick to the facts.\" Th"
+    },
+    {
+      "number": 8,
+      "source": "web",
+      "title": "TV-Sendung verpasst? Filme, Serien und mehr in der Mediathek - TV … — https://www.tvspielfilm.de/mediathek/",
+      "url": "https://www.tvspielfilm.de/mediathek/",
+      "snippet": "TV-Sendung verpasst? Filme, Serien und mehr in der Mediathek - TV … Eine Sendung im Fernsehen verpasst? Kein Problem: \"TV SPIELFILM Mediathek\" zeigt verpasste Spielfilme, Serien, Dokus, Shows, Sport o"
+    },
+    {
+      "number": 9,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "LLMs can provide incorrect information. For example, when Google first demonstrated its LLM tool \"Google Bard\" (later re-branded to Gemini), the LLM provided incorrect information about the James Webb"
+    },
+    {
+      "number": 10,
+      "source": "web",
+      "title": "Wie viel Werbung dürfen die Sender eigentlich zeigen? - TV SPIELFILM — https://www.tvspielfilm.de/news/tv/wie-viel-werbung-duerfen-die-sender-eigentlich-zeigen,11967900,ApplicationArticle.html",
+      "url": "https://www.tvspielfilm.de/news/tv/wie-viel-werbung-duerfen-die-sender-eigentlich-zeigen,11967900,ApplicationArticle.html",
+      "snippet": "Wie viel Werbung dürfen die Sender eigentlich zeigen? - TV SPIELFILM Fernsehsender erzielen einen guten Teil ihrer Einnahmen durch Werbegelder. Doch weder öffentlich-rechtliche noch private Kanäle dür"
+    }
+  ],
+  "routing_decision": "both",
+  "sources_used": [
+    "local",
+    "web"
+  ],
+  "timestamp": "2026-07-13T16:51:03.490392+00:00",
+  "report_id": "c6aa2eb1"
+}

@@ -1,0 +1,90 @@
+{
+  "query": "How does RAG compare to the latest fine-tuned models?",
+  "title": "RAG vs. Fine-Tuned Models",
+  "summary": "Retrieval-Augmented Generation (RAG) is a technique used to improve the accuracy of large language models (LLMs) by connecting them to an organization's knowledge base [2]. While RAG reduces the need for frequent model retraining and allows LLMs to include sources in their responses, it does not eliminate all challenges [1, 3]. Fine-tuning, on the other hand, significantly improves the model's performance on specific tasks by aligning the model with the nuances and terminologies of a niche domain [4]. The choice between RAG and fine-tuning depends on the specific use case and requirements.",
+  "key_findings": [
+    "RAG improves the accuracy of LLMs by reducing the need for frequent model retraining and allowing LLMs to include sources in their responses [1, 3].",
+    "Fine-tuning significantly improves the model's performance on specific tasks by aligning the model with the nuances and terminologies of a niche domain [4].",
+    "RAG does not prevent hallucinations in LLMs, and LLMs can still generate misinformation even when pulling from factually correct sources [5, 9]."
+  ],
+  "detailed_analysis": "RAG is a technique used to improve the accuracy of LLMs by connecting them to an organization's knowledge base [2]. This approach has several benefits, including reducing the need for frequent model retraining and allowing LLMs to include sources in their responses [1, 3]. However, RAG does not eliminate all challenges, and LLMs may still struggle to recognize when they lack sufficient information to provide a reliable response [1]. Additionally, RAG does not prevent hallucinations in LLMs, and LLMs can still generate misinformation even when pulling from factually correct sources [5, 9].\nFine-tuning, on the other hand, is a technique used to improve the performance of LLMs on specific tasks by aligning the model with the nuances and terminologies of a niche domain [4]. This approach has been shown to significantly improve the model's performance on specific tasks, but it may not be suitable for all use cases [4]. The choice between RAG and fine-tuning depends on the specific requirements and use case, and both approaches have their own strengths and weaknesses [8, 10].\nIn terms of reducing hallucinations and improving the accuracy of LLMs, RAG has been shown to be effective in blending the LLM process with a web search or other document look-up process to help LLMs stick to the facts [7]. However, RAG is not a direct solution to the problem of hallucinations, and LLMs can still hallucinate around the source material in their response [5]. Therefore, it is essential to carefully evaluate the strengths and weaknesses of both RAG and fine-tuning and choose the approach that best suits the specific use case and requirements.",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "While RAG improves the accuracy of large language models (LLMs), it does not eliminate all challenges. One limitation is that while RAG reduces the need for frequent model retraining, it does not remo"
+    },
+    {
+      "number": 2,
+      "source": "web",
+      "title": "RAG vs. fine-tuning - IBM — https://www.ibm.com/think/topics/rag-vs-fine-tuning",
+      "url": "https://www.ibm.com/think/topics/rag-vs-fine-tuning",
+      "snippet": "RAG vs. fine-tuning - IBM What’s the difference between RAG and fine-tuning? The difference between RAG and fine-tuning is that RAG augments a natural language processing (NLP) model by connecting it "
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "RAG also reduces the need to retrain LLMs with new data, saving on computational and financial costs. Beyond efficiency gains, RAG also allows LLMs to include sources in their responses, so users can "
+    },
+    {
+      "number": 4,
+      "source": "web",
+      "title": "RAG vs Fine-Tuning for LLMs: A Comprehensive Guide with Examples — https://huggingface.co/blog/airabbitX/rag-vs-fine-tuning-for-llms-a-com",
+      "url": "https://huggingface.co/blog/airabbitX/rag-vs-fine-tuning-for-llms-a-com",
+      "snippet": "RAG vs Fine-Tuning for LLMs: A Comprehensive Guide with Examples Aug 16, 2024 · By aligning the model with the nuances and terminologies of a niche domain, Fine-Tuning significantly improves the model"
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "RAG does not prevent hallucinations in LLMs. According to Ars Technica, \"It is not a direct solution because the LLM can still hallucinate around the source material in its response.\""
+    },
+    {
+      "number": 6,
+      "source": "web",
+      "title": "RAG Vs Fine-Tuning for Enhancing LLM Performance — https://www.geeksforgeeks.org/nlp/rag-vs-fine-tuning-for-enhancing-llm-performance/",
+      "url": "https://www.geeksforgeeks.org/nlp/rag-vs-fine-tuning-for-enhancing-llm-performance/",
+      "snippet": "RAG Vs Fine-Tuning for Enhancing LLM Performance Jul 23, 2025 · Among the myriad approaches, two prominent techniques have emerged which are Retrieval-Augmented Generation (RAG) and Fine-tuning. The a"
+    },
+    {
+      "number": 7,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": ". According to Ars Technica, \"RAG is a way of improving LLM performance, in essence by blending the LLM process with a web search or other document look-up process to help LLMs stick to the facts.\" Th"
+    },
+    {
+      "number": 8,
+      "source": "web",
+      "title": "RAG Vs. Fine Tuning: Which One Should You Choose? — https://montecarlo.ai/blog-rag-vs-fine-tuning",
+      "url": "https://montecarlo.ai/blog-rag-vs-fine-tuning",
+      "snippet": "RAG Vs. Fine Tuning: Which One Should You Choose? Mar 10, 2026 · See how RAG and fine-tuning differ for AI accuracy and updates. Learn when to use each approach for current, reliable, and domain-speci"
+    },
+    {
+      "number": 9,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "LLMs can provide incorrect information. For example, when Google first demonstrated its LLM tool \"Google Bard\" (later re-branded to Gemini), the LLM provided incorrect information about the James Webb"
+    },
+    {
+      "number": 10,
+      "source": "web",
+      "title": "RAG vs. Fine tuning: Which AI strategy should you choose? — https://developer.ibm.com/articles/awb-rag-vs-fine-tuning/",
+      "url": "https://developer.ibm.com/articles/awb-rag-vs-fine-tuning/",
+      "snippet": "RAG vs. Fine tuning: Which AI strategy should you choose? Dec 3, 2024 · While fine tuning focuses on shaping the model's responses and behavior, RAG relies on integrating external data into the model'"
+    }
+  ],
+  "routing_decision": "both",
+  "sources_used": [
+    "local",
+    "web"
+  ],
+  "timestamp": "2026-07-13T16:53:59.779884+00:00",
+  "report_id": "c9b25bf7"
+}

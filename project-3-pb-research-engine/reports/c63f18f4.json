@@ -1,0 +1,91 @@
+{
+  "query": "What are the limitations of current large language models?",
+  "title": "Limitations of Current Large Language Models",
+  "summary": "Large language models exhibit persistent limitations despite their sophisticated architectures and massive scale [1]. These limitations constrain their deployment in high-stakes applications. The reliability of large language models is also undermined in multiple-choice settings [3]. Furthermore, the training of large language models requires substantial infrastructure and can be costly [9]. The definition of a \"large\" language model is also vague, with no definitive threshold for the number of parameters required [7].",
+  "key_findings": [
+    "Large language models have persistent limitations that constrain their deployment in high-stakes applications [1].",
+    "The reliability of large language models is undermined in multiple-choice settings [3].",
+    "The training of large language models requires substantial infrastructure and can be costly [9].",
+    "There is no definitive threshold for the number of parameters required to qualify as a \"large\" language model [7]."
+  ],
+  "detailed_analysis": "The limitations of current large language models are a significant concern, as they can impact the reliability and effectiveness of these models in various applications [1]. The lack of a clear definition of what constitutes a \"large\" language model adds to the complexity of this issue [7]. The cost of training large language models is also a significant factor, with the cost of training increasing exponentially with the size of the model [9]. For example, the training of GPT-2, a 1.5-billion-parameter model, cost $50,000 in 2019, while the training of PaLM, a 540-billion-parameter model, cost $8 million in 2022 [9]. This highlights the need for more efficient and cost-effective methods for training large language models.\nThe limitations of large language models are not limited to their technical capabilities, but also extend to their practical applications. For instance, the reliability of large language models in multiple-choice settings is undermined by certain phenomena [3]. This has significant implications for the use of large language models in applications such as education and assessment. Overall, the limitations of current large language models highlight the need for ongoing research and development to improve their capabilities and effectiveness.\nIt is worth noting that the sources provided do not all relate directly to the research question, with some sources appearing to be related to YouTube and Google services [2, 4, 6, 8, 10]. However, the local knowledge base sources [1, 3, 5, 7, 9] provide valuable insights into the limitations of large language models.",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "snippet": "Despite sophisticated architectures and massive scale, large language models exhibit persistent and well-documented limitations that constrain their deployment in high-stakes applications."
+    },
+    {
+      "number": 2,
+      "source": "web",
+      "title": "Turn Restricted Mode on or off on YouTube - Google Help — https://support.google.com/youtube/answer/174084?hl=en&co=GENIE.Platform=Desktop",
+      "url": "https://support.google.com/youtube/answer/174084?hl=en&co=GENIE.Platform=Desktop",
+      "snippet": "Turn Restricted Mode on or off on YouTube - Google Help Restricted Mode is an optional setting that you can use on YouTube. This feature can help screen out potentially mature …"
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "snippet": ". This phenomenon undermines the reliability of large language models in multiple-choice settings."
+    },
+    {
+      "number": 4,
+      "source": "web",
+      "title": "Verify your YouTube account - Google Help — https://support.google.com/youtube/answer/171664?hl=en",
+      "url": "https://support.google.com/youtube/answer/171664?hl=en",
+      "snippet": "Verify your YouTube account - Google Help Verify your YouTube account To verify your channel, you’ll be asked to enter a phone number. We’ll send a verification code by …"
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Vector database",
+      "url": "https://en.wikipedia.org/wiki/Vector_database",
+      "snippet": ". These are then automatically added into the context window of the large language model, and the large language model proceeds to create a response to the prompt given this context."
+    },
+    {
+      "number": 6,
+      "source": "web",
+      "title": "谷歌账号注册验证无法发出信息怎么办? - 知乎 — https://www.zhihu.com/question/1945629068243481180",
+      "url": "https://www.zhihu.com/question/1945629068243481180",
+      "snippet": "谷歌账号注册验证无法发出信息怎么办? - 知乎 3、国内注册的账号能否使用 YouTube 和 Google Play？ 完全可以。 Google 账号是全球通用的，注册成功后即可无缝登录谷歌全 …"
+    },
+    {
+      "number": 7,
+      "source": "local",
+      "title": "Local knowledge base — Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "snippet": ". The qualifier \"large\" in \"large language model\" is inherently vague, as there is no definitive threshold for the number of parameters required to qualify as \"large\"."
+    },
+    {
+      "number": 8,
+      "source": "web",
+      "title": "如何在中国大陆用「合法」的方式观看到youtube上面的「有价值」 … — https://www.zhihu.com/question/1903231775980913051",
+      "url": "https://www.zhihu.com/question/1903231775980913051",
+      "snippet": "如何在中国大陆用「合法」的方式观看到youtube上面的「有价值」 … YouTube 将自动为 添加翻译后的中文字幕，这一功能有效解决了语言障碍问题。 当你向下浏览时，部分 会标注相关信息。 例如， …"
+    },
+    {
+      "number": 9,
+      "source": "local",
+      "title": "Local knowledge base — Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "snippet": "Substantial infrastructure is necessary for training the largest models. The tendency towards larger models is visible in the list of large language models. For example, the training of GPT-2 (i.e. a "
+    },
+    {
+      "number": 10,
+      "source": "web",
+      "title": "How to earn money on YouTube - YouTube Help - Google Help — https://support.google.com/youtube/answer/72857?hl=en",
+      "url": "https://support.google.com/youtube/answer/72857?hl=en",
+      "snippet": "How to earn money on YouTube - YouTube Help - Google Help How to earn money on YouTube We’re expanding the YouTube Partner Program (YPP) to more creators with earlier …"
+    }
+  ],
+  "routing_decision": "both",
+  "sources_used": [
+    "local",
+    "web"
+  ],
+  "timestamp": "2026-07-13T16:54:03.585577+00:00",
+  "report_id": "c63f18f4"
+}

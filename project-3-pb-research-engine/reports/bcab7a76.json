@@ -1,0 +1,55 @@
+{
+  "query": "What is retrieval augmented generation and why does it matter?",
+  "title": "Retrieval Augmented Generation",
+  "summary": "Retrieval-augmented generation (RAG) is a method that combines a parametric language model with a non-parametric external memory accessed through retrieval at inference time [1]. This approach integrates large language models (LLMs) with document retrieval systems to improve domain-specific responses [2]. RAG has been shown to enhance the performance of LLMs by providing them with relevant context and information to generate more accurate and informative outputs [3]. The use of RAG has been noted to be particularly effective in certain applications, including those that utilize vector databases [2]. By leveraging the strengths of both LLMs and retrieval systems, RAG offers a powerful tool for generating high-quality text outputs.",
+  "key_findings": [
+    "Retrieval-augmented generation (RAG) combines a parametric language model with a non-parametric external memory accessed through retrieval at inference time [1].",
+    "The retrieval component of a RAG can be any search system, but is most often implemented as a vector database [2].",
+    "RAG integrates LLMs with document retrieval systems to retrieve relevant documents and generate outputs based on both the query and context included from the retrieved documents [3].",
+    "In the generative phase, the LLM draws from the augmented prompt and its internal representation of its training data to synthesize an answer [4]."
+  ],
+  "detailed_analysis": "Retrieval-augmented generation (RAG) is a significant advancement in the field of natural language processing, as it enables large language models (LLMs) to access and utilize external knowledge and information to generate more accurate and informative outputs [3]. The integration of LLMs with document retrieval systems allows RAG to leverage the strengths of both approaches, providing a more comprehensive and effective solution for text generation tasks [2]. The use of vector databases as the retrieval component of RAG is particularly noteworthy, as it enables efficient and effective retrieval of relevant documents and information [2]. By drawing from the augmented prompt and its internal representation of its training data, the LLM is able to synthesize high-quality answers that take into account both the query and the context provided by the retrieved documents [4].\nThe effectiveness of RAG can be attributed to its ability to address the limitations of traditional LLMs, which often rely solely on their internal knowledge and training data to generate outputs [1]. By providing access to external knowledge and information, RAG enables LLMs to generate more accurate and informative outputs, particularly in domain-specific applications [2]. Furthermore, the use of RAG can help to mitigate the risks associated with LLMs, such as hallucination and bias, by providing a more comprehensive and nuanced understanding of the context and information being generated [3].\nIt is worth noting that the concept of RAG is distinct from other topics in artificial intelligence, such as the study of consciousness and the mind [5]. While the latter is concerned with understanding the nature of subjective experience and the human mind, RAG is focused on developing effective methods for generating high-quality text outputs using LLMs and retrieval systems.",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "The term retrieval-augmented generation (RAG) was introduced in a 2020 paper that described combining a parametric language model with a non-parametric external memory accessed through retrieval at in"
+    },
+    {
+      "number": 2,
+      "source": "local",
+      "title": "Local knowledge base — Vector database",
+      "url": "https://en.wikipedia.org/wiki/Vector_database",
+      "snippet": "An especially common use-case for vector databases is in retrieval-augmented generation (RAG), a method to improve domain-specific responses of large language models. The retrieval component of a RAG "
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "snippet": "Retrieval-augmented generation (RAG) is an approach that integrates LLMs with document retrieval systems. Given a query, a document retriever is called to retrieve the most relevant documents. This is"
+    },
+    {
+      "number": 4,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": ". IBM states that \"in the generative phase, the LLM draws from the augmented prompt and its internal representation of its training data to synthesize\" an answer."
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Artificial intelligence",
+      "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+      "snippet": "David Chalmers identified two problems in understanding the mind, which he named the \"hard\" and \"easy\" problems of consciousness. The easy problem is understanding how the brain processes signals, mak"
+    }
+  ],
+  "routing_decision": "both",
+  "sources_used": [
+    "local"
+  ],
+  "timestamp": "2026-07-13T16:53:10.671436+00:00",
+  "report_id": "bcab7a76"
+}

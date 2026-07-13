@@ -1,0 +1,55 @@
+{
+  "query": "What are the limitations of current large language models?",
+  "title": "Limitations of Current Large Language Models",
+  "summary": "Current large language models exhibit several limitations that constrain their deployment in high-stakes applications [1]. Despite their sophisticated architectures and massive scale, these models are not entirely reliable, particularly in multiple-choice settings [2]. The development and training of large language models require substantial infrastructure and significant financial investment [5]. The definition of a \"large\" language model is also vague, with no definitive threshold for the number of parameters required [4]. These limitations highlight the need for further research and development to improve the performance and reliability of large language models.",
+  "key_findings": [
+    "Current large language models have persistent and well-documented limitations that constrain their deployment in high-stakes applications [1].",
+    "The reliability of large language models is undermined in multiple-choice settings [2].",
+    "The training of large language models requires substantial infrastructure and significant financial investment, with costs ranging from $50,000 to $11 million [5].",
+    "There is no definitive threshold for the number of parameters required to qualify as a \"large\" language model [4]."
+  ],
+  "detailed_analysis": "The limitations of current large language models are a significant concern, particularly in high-stakes applications where reliability and accuracy are crucial [1]. One of the key limitations is the phenomenon that undermines the reliability of large language models in multiple-choice settings [2]. This suggests that large language models may not always be able to provide accurate responses, even when given a limited set of options. Furthermore, the development and training of large language models require significant resources, including substantial infrastructure and financial investment [5]. The cost of training large language models can be prohibitively expensive, with costs ranging from $50,000 to $11 million [5]. The vague definition of a \"large\" language model also highlights the need for further research and development to establish clear standards and benchmarks for these models [4].\nThe use of vector databases and context windows can help improve the performance of large language models [3]. However, these approaches also require significant computational resources and infrastructure. The tendency towards larger models is visible in the list of large language models, with models like GPT-2, PaLM, and Megatron-Turing NLG 530B requiring increasingly large amounts of computational resources and financial investment [5]. Overall, the limitations of current large language models highlight the need for further research and development to improve their performance, reliability, and efficiency.",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "snippet": "Despite sophisticated architectures and massive scale, large language models exhibit persistent and well-documented limitations that constrain their deployment in high-stakes applications."
+    },
+    {
+      "number": 2,
+      "source": "local",
+      "title": "Local knowledge base — Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "snippet": ". This phenomenon undermines the reliability of large language models in multiple-choice settings."
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Vector database",
+      "url": "https://en.wikipedia.org/wiki/Vector_database",
+      "snippet": ". These are then automatically added into the context window of the large language model, and the large language model proceeds to create a response to the prompt given this context."
+    },
+    {
+      "number": 4,
+      "source": "local",
+      "title": "Local knowledge base — Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "snippet": ". The qualifier \"large\" in \"large language model\" is inherently vague, as there is no definitive threshold for the number of parameters required to qualify as \"large\"."
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "snippet": "Substantial infrastructure is necessary for training the largest models. The tendency towards larger models is visible in the list of large language models. For example, the training of GPT-2 (i.e. a "
+    }
+  ],
+  "routing_decision": "both",
+  "sources_used": [
+    "local"
+  ],
+  "timestamp": "2026-07-13T15:14:03.613423+00:00",
+  "report_id": "75f11288"
+}

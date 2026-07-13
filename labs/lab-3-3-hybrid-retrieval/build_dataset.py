@@ -42,7 +42,9 @@ from rich.panel import Panel
 from rich.progress import BarColumn, MofNCompleteColumn, Progress, TextColumn
 from rich.table import Table
 
+# pyrefly: ignore [missing-import]
 from hybrid_retriever import HybridRetriever
+# pyrefly: ignore [missing-import]
 from reranker import CrossEncoderReranker
 
 load_dotenv(find_dotenv())

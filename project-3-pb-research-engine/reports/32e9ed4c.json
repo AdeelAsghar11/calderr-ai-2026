@@ -1,0 +1,55 @@
+{
+  "query": "Explain backpropagation and how neural networks learn",
+  "title": "Backpropagation and Neural Network Learning",
+  "summary": "Neural networks learn to model complex relationships between inputs and outputs and find patterns in data through the use of learning algorithms, with the most common technique being the backpropagation algorithm [1]. Backpropagation is an efficient application of the chain rule, derived by Gottfried Wilhelm Leibniz in 1673, to networks of differentiable nodes [2]. Neural networks can learn to do tasks by considering examples, generally without task-specific programming [4]. The goal of the neural network approach was to solve problems in the same way that a human brain would, but deviations from biology, such as backpropagation, have been introduced [5]. In theory, a neural network can learn any function [1].",
+  "key_findings": [
+    "Neural networks use local search to choose the weights that will get the right output for each input during training, with backpropagation being the most common training technique [1].",
+    "Backpropagation is an efficient application of the chain rule, derived by Gottfried Wilhelm Leibniz in 1673, to networks of differentiable nodes [2].",
+    "The modern form of backpropagation was first published in Seppo Linnainmaa's master thesis in 1970 [2].",
+    "Artificial neural networks (ANNs) learn to do tasks by considering examples, generally without task-specific programming [4]."
+  ],
+  "detailed_analysis": "The backpropagation algorithm is a crucial component of neural network learning, allowing these systems to model complex relationships between inputs and outputs [1]. The concept of backpropagation has a long history, dating back to the work of Gottfried Wilhelm Leibniz in 1673, who derived the chain rule that underlies this technique [2]. However, it wasn't until the 1960s and 1970s that the modern form of backpropagation was developed, with contributions from researchers such as Henry J. Kelley and Seppo Linnainmaa [2]. Neural networks can be categorized into different types, including feedforward neural networks, where the signal passes in only one direction, and recurrent neural networks (RNNs), which feed the output signal back into the input, allowing for short-term memories of previous input events [3]. The use of backpropagation and other learning algorithms has enabled neural networks to learn and improve their performance on a wide range of tasks, from simple pattern recognition to complex decision-making [4]. Despite the deviations from biology introduced by techniques such as backpropagation, neural networks have been highly successful in solving complex problems and have become a key component of many artificial intelligence systems [5].\nThe ability of neural networks to learn and improve their performance is a key aspect of their functionality [4]. This is achieved through the use of learning algorithms, such as backpropagation, which adjust the weights and biases of the network to minimize the error between the predicted output and the actual output [1]. The use of backpropagation and other learning algorithms has enabled neural networks to be applied to a wide range of tasks, from image and speech recognition to natural language processing and decision-making [4]. The flexibility and adaptability of neural networks have made them a key component of many artificial intelligence systems, and their ability to learn and improve their performance has enabled them to achieve state-of-the-art results in many areas [5].\nIn conclusion, the backpropagation algorithm is a crucial component of neural network learning, allowing these systems to model complex relationships between inputs and outputs [1]. The use of backpropagation and other learning algorithms has enabled neural networks to learn and improve their performance on a wide range of tasks, and has made them a key component of many artificial intelligence systems [4]. The flexibility and adaptability of neural networks, combined with their ability to learn and improve their performance, have made them a powerful tool for solving complex problems [5].",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Artificial intelligence",
+      "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+      "snippet": "Learning algorithms for neural networks use local search to choose the weights that will get the right output for each input during training. The most common training technique is the backpropagation "
+    },
+    {
+      "number": 2,
+      "source": "local",
+      "title": "Local knowledge base — Deep learning",
+      "url": "https://en.wikipedia.org/wiki/Deep_learning",
+      "snippet": "Backpropagation is an efficient application of the chain rule derived by Gottfried Wilhelm Leibniz in 1673 to networks of differentiable nodes. The terminology \"back-propagating errors\" was actually i"
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Artificial intelligence",
+      "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+      "snippet": "In feedforward neural networks the signal passes in only one direction. The term perceptron typically refers to a single-layer neural network. In contrast, deep learning uses many layers. Recurrent ne"
+    },
+    {
+      "number": 4,
+      "source": "local",
+      "title": "Local knowledge base — Deep learning",
+      "url": "https://en.wikipedia.org/wiki/Deep_learning",
+      "snippet": "Artificial neural networks (ANNs) or connectionist systems are computing systems inspired by the biological neural networks that constitute animal brains. Such systems learn (progressively improve the"
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Deep learning",
+      "url": "https://en.wikipedia.org/wiki/Deep_learning",
+      "snippet": "The original goal of the neural network approach was to solve problems in the same way that a human brain would. Over time, attention focused on matching specific mental abilities, leading to deviatio"
+    }
+  ],
+  "routing_decision": "local",
+  "sources_used": [
+    "local"
+  ],
+  "timestamp": "2026-07-13T16:52:45.856824+00:00",
+  "report_id": "32e9ed4c"
+}

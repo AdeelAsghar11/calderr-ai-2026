@@ -1,0 +1,54 @@
+{
+  "query": "How does RAG compare to the latest fine-tuned models?",
+  "title": "Comparison of RAG with Fine-Tuned Models",
+  "summary": "Retrieval-augmented generation (RAG) is a method that improves the accuracy of large language models (LLMs) by blending the LLM process with a web search or document look-up process [4]. While RAG reduces the need for frequent model retraining and provides greater transparency, it does not eliminate all challenges [1, 2]. RAG can help reduce AI hallucinations, but it is not a direct solution and may still allow LLMs to generate incorrect information [3, 4]. Overall, RAG is a useful tool for improving LLM performance, but it has its limitations.",
+  "key_findings": [
+    "RAG improves the accuracy of LLMs by reducing the need for frequent model retraining and providing greater transparency [1, 2].",
+    "RAG can help reduce AI hallucinations, but it is not a direct solution and may still allow LLMs to generate incorrect information [3, 4].",
+    "LLMs can provide incorrect information, even when using RAG, if they misinterpret the context of factually correct sources [5]."
+  ],
+  "detailed_analysis": "RAG is a valuable tool for improving the performance of LLMs, as it helps to reduce the need for frequent model retraining and provides greater transparency by allowing users to verify cited sources [1, 2]. However, RAG is not a panacea, and LLMs may still struggle to recognize when they lack sufficient information to provide a reliable response [1]. Additionally, RAG does not prevent hallucinations in LLMs, which can lead to the generation of incorrect information [3]. According to Ars Technica, RAG is a way of improving LLM performance by blending the LLM process with a web search or document look-up process to help LLMs stick to the facts [4]. Nevertheless, LLMs can still generate misinformation even when pulling from factually correct sources if they misinterpret the context [5]. This highlights the need for continued research and development to improve the accuracy and reliability of LLMs.\nThe limitations of RAG are significant, and it is essential to consider these limitations when evaluating the effectiveness of RAG in improving LLM performance. For example, the fact that RAG does not prevent hallucinations in LLMs means that it is not a direct solution to the problem of AI-generated misinformation [3, 4]. Furthermore, the potential for LLMs to misinterpret the context of factually correct sources highlights the need for continued research into the development of more advanced methods for improving LLM accuracy [5].\nIn conclusion, while RAG is a useful tool for improving the performance of LLMs, it has its limitations, and continued research and development are necessary to address the challenges associated with LLMs. By understanding the strengths and weaknesses of RAG, researchers and developers can work to create more accurate and reliable LLMs that can provide high-quality information to users.",
+  "citations": [
+    {
+      "number": 1,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "While RAG improves the accuracy of large language models (LLMs), it does not eliminate all challenges. One limitation is that while RAG reduces the need for frequent model retraining, it does not remo"
+    },
+    {
+      "number": 2,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "RAG also reduces the need to retrain LLMs with new data, saving on computational and financial costs. Beyond efficiency gains, RAG also allows LLMs to include sources in their responses, so users can "
+    },
+    {
+      "number": 3,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "RAG does not prevent hallucinations in LLMs. According to Ars Technica, \"It is not a direct solution because the LLM can still hallucinate around the source material in its response.\""
+    },
+    {
+      "number": 4,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": ". According to Ars Technica, \"RAG is a way of improving LLM performance, in essence by blending the LLM process with a web search or other document look-up process to help LLMs stick to the facts.\" Th"
+    },
+    {
+      "number": 5,
+      "source": "local",
+      "title": "Local knowledge base — Retrieval-augmented generation",
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "snippet": "LLMs can provide incorrect information. For example, when Google first demonstrated its LLM tool \"Google Bard\" (later re-branded to Gemini), the LLM provided incorrect information about the James Webb"
+    }
+  ],
+  "routing_decision": "both",
+  "sources_used": [
+    "local"
+  ],
+  "timestamp": "2026-07-13T15:14:00.359008+00:00",
+  "report_id": "aaac0aef"
+}

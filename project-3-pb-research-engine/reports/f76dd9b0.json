@@ -1,0 +1,54 @@
+{
+  "query": "Which vector databases are most popular for production RAG in 2026?",
+  "title": "Vector Databases for Production RAG in 2026",
+  "summary": "The research question seeks to identify the most popular vector databases for production RAG in 2026. However, the provided sources do not directly address this question, as they appear to be related to vector graphics, mathematics, and physics, rather than vector databases for RAG (Retrieval-Augmented Generation) [1], [2], [3]. The sources provided are mostly related to companies and websites that offer vector-related products and services [4], [5]. There is no clear information on vector databases for production RAG in 2026.",
+  "key_findings": [
+    "Vector databases are not explicitly mentioned in the provided sources [1], [2], [3], [4], [5].",
+    "The sources are related to vector graphics, mathematics, and physics, rather than vector databases for RAG [1], [2], [3].",
+    "Companies like Vector and websites like Vecteezy, Magnific, and Wikipedia provide information on vectors, but not specifically on vector databases for production RAG [4], [5]."
+  ],
+  "detailed_analysis": "The provided sources do not offer any direct information on vector databases for production RAG in 2026. Vector, as mentioned in source [1], is a company that supplies software and engineering services for the networking of electronic systems, but it does not seem to be related to vector databases for RAG. Similarly, sources [2], [3], [4], and [5] are related to vector graphics, mathematics, and physics, or provide download centers and marketplaces for vector images, but do not address the research question. As a result, it is not possible to identify the most popular vector databases for production RAG in 2026 based on the provided sources. Further research is needed to answer this question.",
+  "citations": [
+    {
+      "number": 1,
+      "source": "web",
+      "title": "Vector | Welcome — https://www.vector.com/int/en/",
+      "url": "https://www.vector.com/int/en/",
+      "snippet": "Vector | Welcome Vector supplies software and engineering services for the networking of electronic systems in the automobile and related industries (CAN, FlexRay, AUTOSAR, Ethernet etc.)"
+    },
+    {
+      "number": 2,
+      "source": "web",
+      "title": "Download Free Vectors, Images, Photos & Videos | Vecteezy — https://www.vecteezy.com/",
+      "url": "https://www.vecteezy.com/",
+      "snippet": "Download Free Vectors, Images, Photos & Videos | Vecteezy Vecteezy is an online marketplace where users can license stock photos, vector graphics, and stock footage from artists. Basic features are fr"
+    },
+    {
+      "number": 3,
+      "source": "web",
+      "title": "Vector (mathematics and physics) - Wikipedia — https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)",
+      "url": "https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)",
+      "snippet": "Vector (mathematics and physics) - Wikipedia In mathematics, physics, and engineering, a Euclidean vector or simply a vector (sometimes called a geometric vector [1] or spatial vector [2]) is a geomet"
+    },
+    {
+      "number": 4,
+      "source": "web",
+      "title": "Vector Download Center — https://www.vector.com/int/en/support-downloads/download-center/",
+      "url": "https://www.vector.com/int/en/support-downloads/download-center/",
+      "snippet": "Vector Download Center Vector Download Center Here we provide you with the most popular software and interesting documents for download. You did not find the download you were looking for? Please cont"
+    },
+    {
+      "number": 5,
+      "source": "web",
+      "title": "Free Vector Images - Download & Edit Online | Magnific (formerly Freepik) — https://www.magnific.com/vectors",
+      "url": "https://www.magnific.com/vectors",
+      "snippet": "Free Vector Images - Download & Edit Online | Magnific (formerly Freepik) Discover millions of free vectors on Magnific. Explore a vast collection of diverse, high-quality vector files in endless styl"
+    }
+  ],
+  "routing_decision": "web",
+  "sources_used": [
+    "web"
+  ],
+  "timestamp": "2026-07-13T16:50:59.250024+00:00",
+  "report_id": "f76dd9b0"
+}
