@@ -24,6 +24,7 @@ from rich.console import Console
 from rich.progress import BarColumn, MofNCompleteColumn, Progress, TextColumn
 from rich.table import Table
 
+# pyrefly: ignore [missing-import]
 from loader import load_documents
 
 app     = typer.Typer(help="Ingest personal documents into ChromaDB", add_completion=False)

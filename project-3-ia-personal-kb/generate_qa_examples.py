@@ -1,13 +1,16 @@
 """
 generate_qa_examples.py — Generate the 15 Q&A Examples Deliverable
 
-Runs 15 preset questions against the personal knowledge base and saves
-a full transcript (question, retrieved sources, answer) to qa_examples.md.
+Uses hybrid retrieval (BM25 + semantic, RRF fusion) — the version that
+fixed the retrieval misses found in the first run: RAGAS metrics not
+found despite existing verbatim in CalderR_Week-3.pdf, HACKDATA judges'
+feedback retrieved from the wrong chunk, and BSL preprocessing technique
+not connected across two documents.
 
-The questions are chosen to span every document type in the knowledge
-base: resume/portfolio, GitHub project READMEs, all 4 CalderR internship
-weeks, and both hackathon writeups — so the transcript demonstrates
-retrieval working correctly across the whole corpus, not just one file.
+The questions span every document type in the knowledge base: resume/
+portfolio, GitHub project READMEs, all 4 CalderR internship weeks, and
+both hackathon writeups — so the transcript demonstrates retrieval
+working correctly across the whole corpus, not just one file.
 
 Run:
   python generate_qa_examples.py
@@ -24,8 +27,10 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_groq import ChatGroq
 from rich.console import Console
 
-from ingest import get_collection
-from kb import RAG_PROMPT, build_context, retrieve
+# pyrefly: ignore [missing-import]
+from hybrid import PersonalHybridRetriever
+# pyrefly: ignore [missing-import]
+from kb import RAG_PROMPT, build_context, DEFAULT_TOP_K
 
 load_dotenv(find_dotenv())
 console = Console()
@@ -51,14 +56,15 @@ QUESTIONS = [
 
 
 def main() -> None:
-    console.print(f"\n[bold]Generating {len(QUESTIONS)} Q&A examples...[/bold]\n")
+    console.print(f"\n[bold]Generating {len(QUESTIONS)} Q&A examples (hybrid retrieval)...[/bold]\n")
 
-    collection = get_collection()
+    retriever = PersonalHybridRetriever()   # loaded once, reused across all 15 questions
     llm    = ChatGroq(model="llama-3.3-70b-versatile", temperature=0, api_key=os.getenv("GROQ_API_KEY"))
     chain  = RAG_PROMPT | llm | StrOutputParser()
 
     lines = [
         "# Personal Knowledge Base — 15 Q&A Examples\n",
+        "Retrieval: hybrid (BM25 keyword + semantic, RRF fusion), top_k=8.\n",
         "Each entry shows the question, the source documents retrieved by "
         "the RAG pipeline, and the generated answer grounded in those sources.\n",
     ]
@@ -66,10 +72,10 @@ def main() -> None:
     for i, q in enumerate(QUESTIONS, 1):
         console.print(f"  [{i:02d}/15] {q[:55]}...")
 
-        docs, metas, dists = retrieve(collection, q, top_k=5)
-        context = build_context(docs, metas)
+        docs    = retriever.retrieve(q, top_k=DEFAULT_TOP_K)
+        context = build_context(docs)
         answer  = chain.invoke({"context": context, "question": q})
-        sources = sorted({m.get("filename", "?") for m in metas})
+        sources = sorted({d.metadata.get("filename", "?") for d in docs})
 
         lines.append(f"## Q{i}: {q}\n")
         lines.append(f"**Sources retrieved:** {', '.join(sources)}\n")
