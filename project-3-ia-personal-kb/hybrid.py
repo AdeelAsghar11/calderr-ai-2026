@@ -1,43 +1,51 @@
 """
-hybrid.py — Hybrid BM25 + Semantic Retrieval for the Personal Knowledge Base
+hybrid.py — Hybrid BM25 + Semantic Retrieval + Cross-Encoder Re-ranking
 
-Fixes the retrieval misses found in the first run of generate_qa_examples.py:
+Three-stage retrieval, each stage fixing a distinct failure mode found
+while building this project:
 
   Q6 (RAGAS metrics) — the chunk containing the exact phrase "RAGAS metrics:
-  faithfulness, answer relevancy, context precision, context recall" existed
-  in CalderR_Week-3.pdf but didn't make the top-5 semantic results. A nearby
-  chunk (the assessment QUESTION asking to name three RAGAS metrics) scored
-  closer on embedding similarity than the chunk containing the actual answer.
-  BM25 catches this immediately — "RAGAS metrics" is a direct keyword match.
+  faithfulness, answer relevancy, context precision, context recall" was
+  CONFIRMED intact and unscrambled in the database (see debug_chunks.py).
+  It still didn't surface because the query says "framework" and that exact
+  chunk never uses that word — while two OTHER chunks (the Recommended
+  Resources table entries) pair "RAGAS" with "framework" directly. BM25
+  rewards literal term overlap, so it ranked those chunks higher even
+  though they don't actually answer the question. This needed a
+  cross-encoder: a model that reads the query and a candidate chunk
+  TOGETHER and judges relevance by meaning, not shared words.
 
-  Q9 / Q12 — similar pattern: the right document was retrieved, but not
-  always the right chunk within it, because pure semantic search ranks by
-  embedding distance alone with no signal from literal term overlap.
+  Q9 / Q12 (fixed by hybrid alone) — right document, wrong chunk within it,
+  or an exact phrase pure semantic search under-ranked. BM25 fixed these.
 
-Same pattern as lab-3-3/hybrid_retriever.py, pointed at this project's own
-ChromaDB collection (personal_kb) instead of the CalderR wiki_docs collection.
+Pipeline: BM25 (k=15) + semantic (k=15) → RRF fusion → cross-encoder
+re-rank → final top_k. The wider k=15 (vs. the original k=10) exists
+specifically to give the re-ranker enough candidates to work with —
+a chunk that's semantically correct but ranks 12th on keyword overlap
+alone needs to be IN the pool before the cross-encoder can promote it.
 
-Fusion: Reciprocal Rank Fusion (RRF) via LangChain's EnsembleRetriever —
-a chunk ranked high by EITHER BM25 or semantic search scores well; a chunk
-ranked high by BOTH scores highest.
+Same pattern as lab-3-3/hybrid_retriever.py + reranker.py combined,
+pointed at this project's own ChromaDB collection (personal_kb).
 """
 
 from __future__ import annotations
 
-import sys
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8")
-if hasattr(sys.stderr, "reconfigure"):
-    sys.stderr.reconfigure(encoding="utf-8")
-
 import chromadb
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
-from langchain_classic.retrievers import EnsembleRetriever
 from langchain_community.retrievers import BM25Retriever
 from langchain_core.documents import Document
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from rich.console import Console
+
+# EnsembleRetriever moved from langchain.retrievers to langchain_classic.retrievers
+# in LangChain v1.0+. Try the new location first, fall back to the old one so
+# this works on either version without needing to know which is installed.
+try:
+    from langchain_classic.retrievers import EnsembleRetriever
+except ImportError:
+    # pyrefly: ignore [missing-import]
+    from langchain.retrievers import EnsembleRetriever
 
 # pyrefly: ignore [missing-import]
 from ingest import CHROMA_PATH, COLLECTION_NAME, EMBEDDING_MODEL
@@ -59,6 +67,7 @@ class PersonalHybridRetriever:
         self,
         bm25_weight:   float = 0.5,
         vector_weight: float = 0.5,
+        use_reranker:  bool  = True,
     ) -> None:
         console.print("[dim]Loading hybrid retriever (BM25 + semantic)...[/dim]")
 
@@ -71,9 +80,12 @@ class PersonalHybridRetriever:
         texts     = data["documents"]
         metadatas = data["metadatas"]
 
-        # BM25 — keyword matching, catches exact-phrase content semantic search misses
+        # BM25 — keyword matching, catches exact-phrase content semantic search misses.
+        # k=15 (not 10) so the candidate pool feeding the re-ranker is wide enough
+        # to include chunks that rank poorly on literal keyword overlap but are
+        # still the semantically correct answer.
         self._bm25    = BM25Retriever.from_texts(texts, metadatas=metadatas)
-        self._bm25.k  = 10
+        self._bm25.k  = 15
 
         # Semantic — vector similarity via LangChain's Chroma wrapper, same collection
         hf_embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
@@ -82,13 +94,24 @@ class PersonalHybridRetriever:
             collection_name=COLLECTION_NAME,
             embedding_function=hf_embeddings,
         )
-        self._vector = chroma_lc.as_retriever(search_kwargs={"k": 10})
+        self._vector = chroma_lc.as_retriever(search_kwargs={"k": 15})
 
         # RRF fusion — a chunk ranked high by BOTH retrievers wins
         self._ensemble = EnsembleRetriever(
             retrievers=[self._bm25, self._vector],
             weights=[bm25_weight, vector_weight],
         )
+
+        # Cross-encoder re-ranker — reads query + chunk TOGETHER and scores true
+        # relevance, catching cases where the right chunk uses different wording
+        # than the query (e.g. query says "framework", chunk says "metrics:").
+        # BM25 and vector search both score chunks independently of each other;
+        # only a cross-encoder does joint attention over the pair.
+        self._reranker = None
+        if use_reranker:
+            from sentence_transformers import CrossEncoder
+            console.print("[dim]Loading cross-encoder re-ranker (BAAI/bge-reranker-base)...[/dim]")
+            self._reranker = CrossEncoder("BAAI/bge-reranker-base")
 
     def retrieve(
         self,
@@ -97,16 +120,22 @@ class PersonalHybridRetriever:
         source: str | None = None,
     ) -> list[Document]:
         """
-        Hybrid retrieval with optional post-hoc source filtering.
+        Hybrid retrieval (BM25 + semantic, RRF fusion), optionally re-ranked
+        by a cross-encoder before final top_k slicing.
 
         Source filtering happens AFTER fusion rather than before, since
         BM25Retriever has no native metadata filter. This costs nothing in
-        practice — the fused candidate pool is small (~15-20) before slicing.
+        practice — the fused candidate pool is small (~20-30) before slicing.
         """
         docs = self._ensemble.invoke(query)
 
         if source:
             docs = [d for d in docs if d.metadata.get("source") == source]
+
+        if self._reranker and docs:
+            pairs  = [(query, d.page_content) for d in docs]
+            scores = self._reranker.predict(pairs)
+            docs   = [d for _, d in sorted(zip(scores.tolist(), docs), key=lambda x: x[0], reverse=True)]
 
         return docs[:top_k]
 
@@ -120,3 +149,7 @@ if __name__ == "__main__":
     print(f"\nQuery: {query}\n")
     for i, d in enumerate(docs, 1):
         print(f"{i}. [{d.metadata.get('filename', '?')}] {d.page_content[:150]}...")
+
+    found = any("faithfulness" in d.page_content.lower() for d in docs)
+    print(f"\n{'✓ FIXED' if found else '✗ still missing'} — chunk with RAGAS metrics list "
+          f"{'is now' if found else 'is NOT'} in top-8")
