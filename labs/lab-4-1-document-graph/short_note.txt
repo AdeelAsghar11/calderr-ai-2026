@@ -1,0 +1,12 @@
+Meeting Notes: Week 4 Kickoff
+
+We're moving from linear chains into LangGraph this week. The main shift
+is thinking in terms of state, nodes, and edges instead of a fixed
+pipeline of function calls.
+
+Three labs this week: a document processing graph with a conditional
+split step, a self-correcting loop that retries on validation failure,
+and a human-in-the-loop content moderation workflow.
+
+Action items: read the LangGraph docs before Monday's session, and make
+sure LangSmith tracing is set up before Friday's production graph work.

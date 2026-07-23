@@ -47,6 +47,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
+# pyrefly: ignore [missing-import]
 from hybrid_retriever import HybridRetriever
 
 app     = typer.Typer(help="Cross-encoder re-ranker — Lab 3.3", add_completion=False)

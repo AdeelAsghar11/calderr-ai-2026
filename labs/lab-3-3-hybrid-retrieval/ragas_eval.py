@@ -38,6 +38,7 @@ if hasattr(sys.stderr, "reconfigure"):
 
 # Mocking modules to prevent Ragas import errors on newer langchain versions
 try:
+    # pyrefly: ignore [missing-import]
     import langchain_community.chat_models.vertexai
 except ModuleNotFoundError:
     mock_chat_vertex = types.ModuleType("langchain_community.chat_models.vertexai")

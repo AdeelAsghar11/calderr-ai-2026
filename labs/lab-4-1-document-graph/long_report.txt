@@ -1,0 +1,76 @@
+Report: Moving From Chains to Graphs in Agentic Systems
+
+Section 1: Why linear chains stop being enough
+
+A chain built with the pipe operator has a fixed shape decided at write
+time. Prompt goes into model, model output goes into a parser, parser
+output goes into the next step. That works well for a large share of
+tasks, and it should stay the default whenever the task genuinely is a
+straight line from input to output. The trouble starts the moment the
+right next step depends on something you can only know once the model
+has actually run. A support ticket might need three different handling
+paths depending on its content. A generated answer might need to be
+regenerated if it fails a check. A workflow might need to pause entirely
+and wait for a human to look at it before continuing. None of those are
+expressible as a fixed sequence of pipe operators, because the sequence
+itself needs to change based on runtime data.
+
+Section 2: The state, node, edge model
+
+LangGraph's answer is to make the control flow an explicit, inspectable
+object instead of an implicit consequence of how you nested your function
+calls. You define a state schema describing exactly what data flows
+through the system. You write nodes as small functions, each one reading
+that state and returning the piece of it they changed. You wire nodes
+together with edges, and edges are allowed to be conditional: instead of
+always going to the same next node, a conditional edge runs a routing
+function against the current state and picks the destination at run
+time. Because a node can be reachable from more than one place, and
+because an edge can point back at a node earlier in the graph, this
+naturally supports branching and looping in a way a linear chain cannot.
+
+Section 3: What this buys you in practice
+
+The most immediate benefit is correctness for tasks that are genuinely
+branchy. A classification router that sends a query down one of three
+specialized paths is a normal, boring conditional edge, not a special
+case that needs to be hacked around. A close second benefit is
+retry logic: a generate-then-validate loop with a bounded number of
+retries is just a cycle in the graph with a counter in the state, and
+the termination condition is an ordinary conditional edge that checks
+whether the counter has been exceeded. The benefit that matters most for
+production systems, though, is persistence. Because the state is an
+explicit object rather than something buried inside a call stack, it can
+be checkpointed after every node runs. That is what makes it possible to
+pause a workflow waiting on a human approval, shut the whole process
+down, and resume exactly where it left off hours or days later, reading
+the saved state back out of a database rather than needing the original
+process to still be alive.
+
+Section 4: Where the complexity actually lives
+
+None of this is free. A chain is easy to reason about precisely because
+its shape never changes: you can read it top to bottom and know exactly
+what happens next. A graph with several conditional edges and a couple
+of loops needs its own documentation, usually a diagram, because the
+path any single run takes through it depends on data you can't see just
+by reading the node definitions. The state schema also becomes a shared
+contract between every node in the graph, so a field that one node
+expects to exist has to actually be set by something upstream of it, or
+you get a KeyError at run time instead of an import-time error. Both of
+these are manageable, but they are real costs, and they are the reason
+graphs are not simply a strict upgrade over chains for every task. The
+right default is still the simplest structure that correctly describes
+the problem: a chain when the steps are genuinely fixed, a graph when
+they are not.
+
+Section 5: What this week covers
+
+This week works through the state, node, edge model directly, then adds
+conditional routing, then adds cyclic loops with bounded retries, then
+adds human-in-the-loop interrupts with real persistence across the
+pause, and closes with tracing and debugging tools for inspecting a
+graph's actual runtime behaviour rather than just its defined structure.
+Each day's lab is a small, complete example of one of these patterns in
+isolation, before the Friday project combines several of them into a
+single production-shaped system.
