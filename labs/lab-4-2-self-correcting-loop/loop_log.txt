@@ -1,0 +1,23 @@
+2026-07-23 17:44:07,258 attempt=1 product=Brew draft='Brew: small-batch coffee, delivered weekly to you' feedback_used=None
+2026-07-23 17:44:07,259 attempt=1 product=Brew valid=True feedback=''
+2026-07-23 17:44:07,260 DONE product=Brew result=passed iterations=1
+2026-07-23 17:44:07,261 attempt=1 product=TrailMate draft='TrailMate uses AI to help you plan the perfect hiking route every time' feedback_used=None
+2026-07-23 17:44:07,261 attempt=1 product=TrailMate valid=False feedback='13 words, needs to be 8 or fewer'
+2026-07-23 17:44:07,261 attempt=2 product=TrailMate draft='TrailMate plans your perfect hiking route using AI power' feedback_used='13 words, needs to be 8 or fewer'
+2026-07-23 17:44:07,262 attempt=2 product=TrailMate valid=False feedback='9 words, needs to be 8 or fewer'
+2026-07-23 17:44:07,262 attempt=3 product=TrailMate draft='TrailMate: AI-planned hiking routes, made simple' feedback_used='9 words, needs to be 8 or fewer'
+2026-07-23 17:44:07,262 attempt=3 product=TrailMate valid=True feedback=''
+2026-07-23 17:44:07,263 DONE product=TrailMate result=passed iterations=3
+2026-07-23 17:44:07,264 attempt=1 product=Ledger draft='Track every expense in seconds, built for freelancers' feedback_used=None
+2026-07-23 17:44:07,264 attempt=1 product=Ledger valid=False feedback="missing the product name 'Ledger'"
+2026-07-23 17:44:07,265 attempt=2 product=Ledger draft='Simple expense tracking made for busy freelancers everywhere' feedback_used="missing the product name 'Ledger'"
+2026-07-23 17:44:07,265 attempt=2 product=Ledger valid=False feedback="missing the product name 'Ledger'"
+2026-07-23 17:44:07,265 attempt=3 product=Ledger draft='Freelance expense tracking, simplified and fast for you' feedback_used="missing the product name 'Ledger'"
+2026-07-23 17:44:07,265 attempt=3 product=Ledger valid=False feedback="missing the product name 'Ledger'"
+2026-07-23 17:44:07,266 DONE product=Ledger result=gave_up iterations=3 last_issue="missing the product name 'Ledger'"
+2026-07-23 17:45:56,054 attempt=1 product=Brew draft='"Brew: Freshly roasted, delivered to you."' feedback_used=None
+2026-07-23 17:45:56,056 attempt=1 product=Brew valid=True feedback=''
+2026-07-23 17:45:56,057 DONE product=Brew result=passed iterations=1
+2026-07-23 17:46:33,082 attempt=1 product=Brew draft='Experience Brew, freshly roasted every week.' feedback_used=None
+2026-07-23 17:46:33,083 attempt=1 product=Brew valid=True feedback=''
+2026-07-23 17:46:33,084 DONE product=Brew result=passed iterations=1
