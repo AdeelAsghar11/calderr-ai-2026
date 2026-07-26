@@ -1,0 +1,40 @@
+name: linear_llm_pipeline
+description: Multi-step linear LLM text generation and summarization pipeline
+state:
+  - field: topic
+    type: str
+    reducer: overwrite
+    default: "Agentic AI Architecture"
+  - field: draft_text
+    type: str
+    reducer: overwrite
+    default: ""
+  - field: summary_text
+    type: str
+    reducer: overwrite
+    default: ""
+  - field: logs
+    type: list
+    reducer: append
+    default: []
+
+nodes:
+  - id: generate_draft
+    type: llm_call
+    prompt_template: "Write a short 2-paragraph article about: {topic}"
+    output_field: draft_text
+    temperature: 0.7
+
+  - id: summarize_draft
+    type: llm_call
+    prompt_template: "Summarize the following text into 2 bullet points:\n\n{draft_text}"
+    output_field: summary_text
+    temperature: 0.2
+
+edges:
+  - from: START
+    to: generate_draft
+  - from: generate_draft
+    to: summarize_draft
+  - from: summarize_draft
+    to: END

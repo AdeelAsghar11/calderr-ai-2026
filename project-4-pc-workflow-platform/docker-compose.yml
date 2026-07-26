@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: project-4-pc-workflow-platform/Dockerfile
+    container_name: workflow_platform_api
+    ports:
+      - "8000:8000"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - WORKFLOW_DB_PATH=/app/project-4-pc-workflow-platform/workflows_api_state.db
+    volumes:
+      - platform_data:/app/project-4-pc-workflow-platform
+
+  dashboard:
+    build:
+      context: ..
+      dockerfile: project-4-pc-workflow-platform/Dockerfile
+    container_name: workflow_platform_dashboard
+    command: uv run streamlit run project-4-pc-workflow-platform/src/dashboard.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - WORKFLOW_DB_PATH=/app/project-4-pc-workflow-platform/workflows_dashboard_state.db
+    volumes:
+      - platform_data:/app/project-4-pc-workflow-platform
+    depends_on:
+      - api
+
+volumes:
+  platform_data:

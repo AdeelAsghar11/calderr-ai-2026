@@ -1,0 +1,56 @@
+name: cyclic_refinement
+description: Declarative cyclic self-correction loop combining LLM drafting and function quality evaluation capped by max_iterations
+state:
+  - field: draft_text
+    type: str
+    reducer: overwrite
+    default: "AI safety."
+  - field: word_count
+    type: int
+    reducer: overwrite
+    default: 0
+  - field: quality_status
+    type: str
+    reducer: overwrite
+    default: "fail"
+  - field: iteration_count
+    type: int
+    reducer: overwrite
+    default: 0
+  - field: logs
+    type: list
+    reducer: append
+    default: []
+
+nodes:
+  - id: generate_draft
+    type: llm_call
+    prompt_template: "Expand and improve this text to be at least 30 detailed words:\n{draft_text}"
+    output_field: draft_text
+    temperature: 0.5
+
+  - id: evaluate_quality
+    type: function
+    function_name: check_word_count_quality
+
+  - id: increment_counter
+    type: function
+    function_name: increment_iteration
+
+edges:
+  - from: START
+    to: generate_draft
+  - from: generate_draft
+    to: evaluate_quality
+  - from: evaluate_quality
+    to: increment_counter
+
+conditional_edges:
+  - from: increment_counter
+    field: quality_status
+    routes:
+      pass: END
+      fail: generate_draft
+    default: generate_draft
+
+max_iterations: 10

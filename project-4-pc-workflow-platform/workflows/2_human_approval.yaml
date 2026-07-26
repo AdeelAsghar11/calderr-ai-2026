@@ -1,0 +1,45 @@
+name: human_approval
+description: Human-in-the-loop content moderation workflow
+state:
+  - field: post_content
+    type: str
+    reducer: overwrite
+    default: ""
+  - field: review_status
+    type: str
+    reducer: overwrite
+    default: "pending"
+  - field: approval_decision
+    type: str
+    reducer: overwrite
+    default: ""
+  - field: logs
+    type: list
+    reducer: append
+    default: []
+
+nodes:
+  - id: prepare_review
+    type: function
+    function_name: prepare_review_data
+
+  - id: human_review_gate
+    type: human_review
+    payload_fields:
+      - post_content
+      - review_status
+    resume_field: approval_decision
+
+  - id: apply_decision
+    type: function
+    function_name: apply_human_decision
+
+edges:
+  - from: START
+    to: prepare_review
+  - from: prepare_review
+    to: human_review_gate
+  - from: human_review_gate
+    to: apply_decision
+  - from: apply_decision
+    to: END

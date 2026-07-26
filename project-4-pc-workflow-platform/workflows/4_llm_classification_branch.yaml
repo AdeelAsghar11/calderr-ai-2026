@@ -1,0 +1,57 @@
+name: llm_classification_branch
+description: LLM-based query classification with dynamic conditional routing
+state:
+  - field: user_query
+    type: str
+    reducer: overwrite
+    default: "How do I reset my password?"
+  - field: category
+    type: str
+    reducer: overwrite
+    default: "support"
+  - field: response
+    type: str
+    reducer: overwrite
+    default: ""
+  - field: logs
+    type: list
+    reducer: append
+    default: []
+
+nodes:
+  - id: classify_intent
+    type: llm_call
+    prompt_template: "Classify this query as strictly one word ('support', 'sales', or 'technical'): {user_query}"
+    output_field: category
+    temperature: 0.0
+
+  - id: support_node
+    type: function
+    function_name: handle_support
+
+  - id: sales_node
+    type: function
+    function_name: handle_sales
+
+  - id: technical_node
+    type: function
+    function_name: handle_technical
+
+edges:
+  - from: START
+    to: classify_intent
+  - from: support_node
+    to: END
+  - from: sales_node
+    to: END
+  - from: technical_node
+    to: END
+
+conditional_edges:
+  - from: classify_intent
+    field: category
+    routes:
+      support: support_node
+      sales: sales_node
+      technical: technical_node
+    default: support_node

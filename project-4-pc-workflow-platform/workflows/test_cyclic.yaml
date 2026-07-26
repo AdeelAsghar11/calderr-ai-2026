@@ -1,0 +1,24 @@
+name: cyclic_test
+description: Cyclic workflow to test max_iterations cap
+state:
+  - field: iteration_count
+    type: int
+    reducer: overwrite
+    default: 0
+  - field: logs
+    type: list
+    reducer: append
+    default: []
+
+nodes:
+  - id: step_counter
+    type: function
+    function_name: increment_iteration
+
+edges:
+  - from: START
+    to: step_counter
+  - from: step_counter
+    to: step_counter
+
+max_iterations: 3

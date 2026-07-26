@@ -1,0 +1,36 @@
+name: function_pipeline
+description: Pure offline function transformation workflow with no LLM calls
+state:
+  - field: input_text
+    type: str
+    reducer: overwrite
+    default: "hello world"
+  - field: word_count
+    type: int
+    reducer: overwrite
+    default: 0
+  - field: transformed_text
+    type: str
+    reducer: overwrite
+    default: ""
+  - field: logs
+    type: list
+    reducer: append
+    default: []
+
+nodes:
+  - id: count_words_node
+    type: function
+    function_name: count_words
+
+  - id: transform_text_node
+    type: function
+    function_name: uppercase_transform
+
+edges:
+  - from: START
+    to: count_words_node
+  - from: count_words_node
+    to: transform_text_node
+  - from: transform_text_node
+    to: END
