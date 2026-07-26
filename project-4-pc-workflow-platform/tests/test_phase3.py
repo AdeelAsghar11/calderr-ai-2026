@@ -10,7 +10,9 @@ import pytest
 # Add project root to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+# pyrefly: ignore [missing-import]
 from src.compiler import compile_workflow_from_yaml
+# pyrefly: ignore [missing-import]
 from src.engine import WorkflowEngine
 
 EXPECTED_WORKFLOW_FILES = [
