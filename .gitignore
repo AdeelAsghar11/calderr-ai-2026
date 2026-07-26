@@ -45,3 +45,5 @@ docs/
 project-3-ia-personal-kb/docs/
 project-3-ia-personal-kb/kb_chroma_db/
 project-3-ia-personal-kb/qa_examples.md
+# Databases
+*.db
