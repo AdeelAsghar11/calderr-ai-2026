@@ -19,6 +19,7 @@ if BASE_DIR not in sys.path:
 
 from langchain_core.embeddings import DeterministicFakeEmbedding
 
+# pyrefly: ignore [missing-import]
 from document_graph import build_graph
 
 FAKE_DIM = 384  # same dimensionality as all-MiniLM-L6-v2, for a realistic check
