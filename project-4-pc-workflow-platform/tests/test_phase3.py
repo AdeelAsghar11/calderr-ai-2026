@@ -46,3 +46,22 @@ def test_all_5_yaml_workflows_parse_and_compile():
         compiled_count += 1
 
     assert compiled_count == 5
+
+
+def test_conditional_edge_routing_to_end(tmp_path):
+    db_file = os.path.join(tmp_path, "test_routing.db")
+    engine = WorkflowEngine(db_path=db_file)
+    engine.register_yaml_file("project-4-pc-workflow-platform/workflows/5_cyclic_refinement.yaml")
+
+    class FakeLLM:
+        def invoke(self, prompt):
+            return "This draft text is long enough to pass the word count quality check."
+
+    result = engine.run_workflow(
+        "cyclic_refinement",
+        initial_state={"draft_text": "start text"},
+        thread_id="test-routing-thread",
+        llm_factory=lambda node_spec: FakeLLM(),
+    )
+    assert result["status"] == "completed"
+    assert result["state"]["quality_status"] == "pass"

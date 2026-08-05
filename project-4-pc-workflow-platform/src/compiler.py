@@ -10,6 +10,10 @@ import sys
 # Ensure project directory is in python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import operator
 from typing import Annotated, Any, Callable, Dict, Optional, TypedDict
 import yaml
@@ -17,7 +21,9 @@ import yaml
 from langgraph.graph import END, START, StateGraph
 from langgraph.types import interrupt
 
+# pyrefly: ignore [missing-import]
 from src.registry import FUNCTION_REGISTRY
+# pyrefly: ignore [missing-import]
 from src.schema import WorkflowSpec
 
 
@@ -135,7 +141,7 @@ def compile_workflow(
     for c_edge in spec.conditional_edges:
         field_name = c_edge.field
         routes = c_edge.routes
-        default_target = END if c_edge.default == "END" else c_edge.default
+        default_target = c_edge.default
 
         def make_router(f_name, r_table, def_t):
             def router(state: Dict[str, Any]) -> str:
@@ -147,8 +153,14 @@ def compile_workflow(
         # Build explicit path map for LangGraph
         path_map = {}
         for k, v in routes.items():
-            path_map[v] = END if v == "END" else v
-        path_map[c_edge.default] = END if c_edge.default == "END" else c_edge.default
+            target_node = END if v == "END" else v
+            path_map[k] = target_node
+            path_map[v] = target_node
+
+        def_node = END if default_target == "END" else default_target
+        path_map[default_target] = def_node
+        path_map[END] = END
+        path_map["END"] = END
 
         builder.add_conditional_edges(
             c_edge.from_node,

@@ -8,7 +8,9 @@ Run: python smoke_test.py
 
 import sys
 
+# pyrefly: ignore [missing-import]
 from code_generator import EXEC_TIMEOUT_SECONDS, _HAS_NETNS, build_graph, execute_code
+# pyrefly: ignore [missing-import]
 from problems import PROBLEMS, PROBLEMS_BY_ID
 
 failures = []
