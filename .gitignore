@@ -34,6 +34,7 @@ htmlcov/
 # Logs
 agent_log.txt
 codegen_log.txt
+loop_log.txt
 
 # Local cache
 .cache/
