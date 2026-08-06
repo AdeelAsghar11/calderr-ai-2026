@@ -1,0 +1,18 @@
+INDEPENDENT CONSULTING SERVICES AGREEMENT
+
+This Consulting Agreement ("Agreement") is made between Client Corporation ("Client") and Independent Consultant ("Consultant").
+
+1. Scope of Work and Deliverables.
+Consultant agrees to render professional software engineering services. Client reserves the right to modify deliverables and timelines unilaterally at any time during project execution.
+
+2. Termination Rights.
+Client may terminate this Agreement at any time without cause upon immediate written notice to Consultant. Consultant may only terminate this Agreement upon ninety (90) days prior written notice with Client's written consent.
+
+3. Intellectual Property Assignment.
+All work product, code, documentation, and inventions created by Consultant shall automatically belong to Client upon creation. Ownership transfers immediately regardless of whether Client has paid for the services rendered.
+
+4. Indemnification and Unlimited Liability.
+Consultant shall defend, indemnify, and hold harmless Client and its officers against any and all claims, liabilities, costs, and damages arising out of performance of services under this Agreement. Consultant's total liability under this Agreement shall be unlimited. Client disclaims all liability to Consultant to the maximum extent permitted by law.
+
+5. System Audit and Access.
+Client reserves the right to perform unannounced audits of Consultant's personal computers, internal networks, and physical workspaces at any time without notice, at Consultant's sole expense.

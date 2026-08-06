@@ -1,0 +1,15 @@
+CONFIDENTIALITY AND NON-DISCLOSURE AGREEMENT
+
+This Confidentiality and Non-Disclosure Agreement ("Agreement") is entered into by and between Disclosing Party and Receiving Party.
+
+1. Definition of Confidential Information.
+"Confidential Information" shall include all financial data, business plans, software code, employee lists, customer databases, oral disclosures, and any general business ideas shared under this Agreement, regardless of whether marked as confidential.
+
+2. Obligations of Non-Disclosure.
+Receiving Party agrees to hold all Confidential Information in strict confidence and shall not disclose any Confidential Information to any third party under any circumstances, including judicial or governmental subpoenas, without prior written approval from Disclosing Party.
+
+3. Perpetual Non-Solicitation.
+Receiving Party agrees that it shall not, directly or indirectly, solicit, hire, engage, or do business with any employee, contractor, vendor, or customer of Disclosing Party perpetually for all time in any geographic market worldwide.
+
+4. Injunctive Relief and Sole Discretion.
+Receiving Party acknowledges that any breach of this Agreement shall cause irreparable harm. Disclosing Party shall be entitled to seek immediate injunctive relief and monetary damages in its sole discretion without the necessity of posting a bond or proving actual damages.

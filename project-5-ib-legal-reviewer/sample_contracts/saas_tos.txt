@@ -1,0 +1,15 @@
+CLOUD PLATFORM TERMS OF SERVICE
+
+Welcome to Cloud platform ("Service"). By accessing or using the Service, Customer agrees to these Terms of Service.
+
+1. Unilateral Terms Modifications.
+Provider reserves the right to modify these Terms, platform capabilities, pricing schedules, or feature availability in its sole discretion at any time without notice. Customer's continued usage after changes are posted constitutes binding agreement.
+
+2. Disclaimer of Warranties and Zero Liability.
+The Service is provided strictly "AS IS" and "AS AVAILABLE" without warranties of any kind, express or implied. Provider shall have no liability for data corruption, security breaches, server downtime, or loss of profits under any circumstances.
+
+3. Mandatory 24-Hour Notice Period for Discrepancies.
+Customer must report any platform defect, downtime SLA failure, or billing discrepancy in writing within 24 hours of occurrence. Failure to notify within 24 hours constitutes a full waiver of all claims and remedies forever.
+
+4. Governing Law and Exclusive Forum.
+This Agreement is governed by the laws of the Cayman Islands. All disputes shall be resolved through binding single-arbitrator proceedings in Grand Cayman. Customer explicitly waives all rights to class action lawsuits or jury trials.
