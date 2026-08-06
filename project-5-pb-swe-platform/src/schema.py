@@ -89,3 +89,74 @@ class IntegrationResult(BaseModel):
     missing_in_backend: list[str] = Field(default_factory=list, description="Endpoints missing in generated backend code")
     missing_in_frontend: list[str] = Field(default_factory=list, description="Endpoints missing in generated frontend code")
     notes: str = Field(description="Diagnostic notes summarizing contract verification results")
+
+
+class TestResult(BaseModel):
+    """
+    Single pytest execution result captured by the QA Agent.
+    """
+    test_name: str = Field(description="Identifier or function name of the executed test")
+    passed: bool = Field(description="True if test assertion succeeded, False if failed or error")
+    output: str = Field(description="Captured stdout and stderr output from the test execution")
+
+
+class QAReport(BaseModel):
+    """
+    Overall Quality Assurance execution report returned by the QA Agent.
+    """
+    tests_written: int = Field(description="Total number of pytest test functions written for acceptance criteria")
+    tests_passed: int = Field(description="Number of test functions that passed execution")
+    tests_failed: int = Field(description="Number of test functions that failed execution")
+    results: list[TestResult] = Field(default_factory=list, description="Detailed test result objects")
+
+
+class SecurityFinding(BaseModel):
+    """
+    Static analysis vulnerability finding reported by the Security Agent.
+    """
+    category: str = Field(description="Category of vulnerability (e.g., SQL Injection, Secrets, Input Validation)")
+    severity: Literal["critical", "high", "medium", "low"] = Field(description="Severity classification rating")
+    location: str = Field(description="File and line location or function context of finding")
+    description: str = Field(description="Detailed explanation of the identified vulnerability")
+
+
+class SecurityReport(BaseModel):
+    """
+    Comprehensive security scan report returned by the Security Agent.
+    """
+    findings: list[SecurityFinding] = Field(default_factory=list, description="List of identified security findings")
+    critical_count: int = Field(description="Total number of findings classified as critical severity")
+
+
+class DockerBuildResult(BaseModel):
+    """
+    Build result report returned by the DevOps Agent following docker build execution.
+    """
+    image_tag: str = Field(description="Target Docker image tag build identifier")
+    build_succeeded: bool = Field(description="True if docker build command returned exit code 0")
+    build_output: str = Field(description="Captured stdout/stderr build logs")
+    build_duration_seconds: float = Field(description="Total time spent executing docker build in seconds")
+
+
+class EndpointCheck(BaseModel):
+    """
+    Individual live HTTP endpoint validation check performed by the Validation Agent.
+    """
+    path: str = Field(description="Target URL endpoint path verified over real HTTP")
+    method: str = Field(description="HTTP method used for verification request")
+    actual_status: int = Field(description="HTTP status code received from live container server")
+    passed: bool = Field(description="True if status code and payload response met contract requirements")
+    notes: str = Field(description="Diagnostic details regarding endpoint validation check")
+
+
+class ValidationReport(BaseModel):
+    """
+    Full live container runtime validation report returned by the Validation Agent.
+    """
+    image_tag: str = Field(description="Docker image tag used to launch validation container")
+    container_started: bool = Field(description="True if container successfully started and bound to host port")
+    endpoint_checks: list[EndpointCheck] = Field(default_factory=list, description="List of individual endpoint check reports")
+    all_passed: bool = Field(description="True if container started and all endpoint checks passed")
+    teardown_succeeded: bool = Field(description="True if container was cleanly stopped and removed without process leaks")
+
+
