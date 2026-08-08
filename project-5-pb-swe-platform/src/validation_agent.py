@@ -17,6 +17,17 @@ from typing import List, Tuple
 from src.schema import DockerBuildResult, EndpointCheck, SystemContract, ValidationReport
 
 
+def is_docker_available() -> bool:
+    """
+    Checks if Docker daemon is running and accessible on the current host system.
+    """
+    try:
+        proc = subprocess.run(["docker", "info"], capture_output=True, timeout=5)
+        return proc.returncode == 0
+    except (FileNotFoundError, OSError, subprocess.TimeoutExpired):
+        return False
+
+
 def get_free_port() -> int:
     """
     Binds a socket to port 0 to dynamically allocate an available OS port.

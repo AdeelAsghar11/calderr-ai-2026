@@ -160,3 +160,35 @@ class ValidationReport(BaseModel):
     teardown_succeeded: bool = Field(description="True if container was cleanly stopped and removed without process leaks")
 
 
+class PipelineRun(BaseModel):
+    """
+    Complete state representation of an end-to-end multi-agent pipeline execution.
+    Handles graceful absence of Docker/Validation stages when Docker daemon is unavailable.
+    """
+    run_id: str = Field(description="Unique execution run identifier (UUID)")
+    feature_spec: str = Field(description="Original natural language feature spec input")
+    status: Literal["running", "completed", "failed"] = Field(description="Current execution status of pipeline")
+    stages_completed: list[str] = Field(default_factory=list, description="List of agent stage names executed during this run")
+    task_list: TaskList = Field(description="Decomposed task list artifact from PM Agent")
+    system_contract: SystemContract = Field(description="Typed SystemContract artifact from Architect Agent")
+    qa_report: QAReport = Field(description="Pytest execution report from QA Agent")
+    security_report: SecurityReport = Field(description="Static vulnerability scan report from Security Agent")
+    docker_build_result: DockerBuildResult | None = Field(default=None, description="Docker build result, or None if DevOps stage was skipped")
+    validation_report: ValidationReport | None = Field(default=None, description="Live container validation report, or None if Validation stage was skipped")
+
+
+class GitHubPublishPlan(BaseModel):
+    """
+    Publishing plan constructed by the GitHub Agent summarizing generated repository artifacts and PR metadata.
+    """
+    repo_name: str = Field(description="Target repository name")
+    description: str = Field(description="Repository description summary")
+    files_to_commit: list[str] = Field(default_factory=list, description="List of relative file paths to be committed")
+    branch_name: str = Field(description="Target git feature branch name")
+    pr_title: str = Field(description="Pull request title")
+    pr_body: str = Field(description="Structured pull request body markdown")
+    dry_run: bool = Field(description="True if created in dry-run mode without external GitHub API calls")
+    actually_published: bool = Field(description="True if branch and pull request were published to live GitHub API")
+
+
+
