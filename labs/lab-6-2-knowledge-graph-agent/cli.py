@@ -60,7 +60,12 @@ def query(
     console.print(table)
 
     # Render Answer Panel
-    kw_status = "[red]FAILED[/red] (Graph traversal required!)" if not result.keyword_search_would_succeed else "[green]SUCCEEDED[/green]"
+    kw_status = (
+        "[bold green]FAILED[/bold green] (Expected: Facts are in separate paragraphs; Graph Traversal was required & succeeded!)"
+        if not result.keyword_search_would_succeed
+        else "[bold yellow]SUCCEEDED[/bold yellow] (Single paragraph contained both entities)"
+    )
+
     console.print(
         Panel(
             f"[bold green]Answer:[/bold green] {result.answer}\n"
