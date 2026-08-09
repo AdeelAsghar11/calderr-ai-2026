@@ -1,12 +1,15 @@
 """
-cli.py — Typer + Rich CLI interface for Project 6-PB Phase 2 GraphRAG Evaluation Study.
+cli.py — Typer + Rich CLI interface for Project 6-PB Phase 3 GraphRAG System.
 
-Executes 30-question study evaluation, performs paired t-test statistical analysis,
-displays Rich summary tables/panels, and exports evaluation_report.html.
+Commands:
+1. run-study: Execute 30-question study evaluation and paired t-test analysis.
+2. serve-api: Launch FastAPI control plane on port 8000.
+3. serve-dashboard: Launch Streamlit research dashboard on port 8501.
 """
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -24,6 +27,7 @@ if str(PROJ_DIR) not in sys.path:
 load_dotenv()
 
 try:
+    # pyrefly: ignore [missing-import]
     from .dataset import get_verified_benchmark_dataset
     from .evaluator import EvaluationRunner
     from .report_generator import generate_html_report
@@ -34,7 +38,7 @@ except ImportError:
     from report_generator import generate_html_report
     from statistical_test import run_paired_ttest
 
-app = typer.Typer(help="Project 6-PB GraphRAG Phase 2 Evaluation Study CLI")
+app = typer.Typer(help="Project 6-PB GraphRAG Phase 3 System CLI")
 console = Console()
 
 
@@ -103,6 +107,28 @@ def run_study(
     # Export HTML Report
     html_path = generate_html_report(records, sig_result, is_real=real)
     console.print(f"\n[bold green]Exported HTML Evaluation Report to:[/bold green] [cyan]{html_path}[/cyan]\n")
+
+
+@app.command(name="serve-api")
+def serve_api(
+    host: str = typer.Option("0.0.0.0", "--host", help="Host address for FastAPI server."),
+    port: int = typer.Option(8000, "--port", help="Port for FastAPI server."),
+) -> None:
+    """Launch FastAPI control plane using uvicorn."""
+    import uvicorn
+    console.print(f"\n[bold green]Starting FastAPI Control Plane on http://{host}:{port}[/bold green]\n")
+    uvicorn.run("project-6-pb-graphrag-intelligence.api:app", host=host, port=port, reload=False)
+
+
+@app.command(name="serve-dashboard")
+def serve_dashboard(
+    port: int = typer.Option(8501, "--port", help="Port for Streamlit dashboard."),
+) -> None:
+    """Launch Streamlit research dashboard."""
+    import subprocess
+    dash_path = PROJ_DIR / "dashboard.py"
+    console.print(f"\n[bold green]Starting Streamlit Research Dashboard on http://localhost:{port}[/bold green]\n")
+    subprocess.run(["uv", "run", "streamlit", "run", str(dash_path), "--server.port", str(port)])
 
 
 if __name__ == "__main__":
