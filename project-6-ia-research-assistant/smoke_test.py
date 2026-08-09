@@ -26,8 +26,10 @@ if str(PROJ_DIR) not in sys.path:
 load_dotenv()
 
 try:
+    # pyrefly: ignore [missing-import]
     from .agent import ResearchAssistantAgent
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from agent import ResearchAssistantAgent
 
 

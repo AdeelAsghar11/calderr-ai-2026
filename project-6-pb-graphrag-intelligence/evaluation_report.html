@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project 6-PB GraphRAG Evaluation Report</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 30px; background-color: #f8f9fa; color: #333; }
+        h1 { color: #1a237e; border-bottom: 3px solid #1a237e; padding-bottom: 10px; }
+        .header-banner { background-color: #d32f2f; color: white; padding: 12px 20px; border-radius: 6px; font-weight: bold; margin-bottom: 25px; }
+        .summary-card { background-color: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .metric-grid { display: flex; gap: 20px; margin-top: 15px; }
+        .metric-box { background-color: #f0f4f8; padding: 15px; border-radius: 6px; flex: 1; text-align: center; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #0d47a1; margin-top: 5px; }
+        table { width: 100%; border-collapse: collapse; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background-color: #1a237e; color: white; font-weight: 600; }
+        tr:hover { background-color: #f5f5f5; }
+        .badge { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; color: white; }
+        .badge.factual { background-color: #0288d1; }
+        .badge.relational { background-color: #7b1fa2; }
+        .badge.complex { background-color: #e65100; }
+    </style>
+</head>
+<body>
+
+    <h1>Project 6-PB: GraphRAG 30-Question Evaluation Study</h1>
+    <div class="header-banner">Mode: STUB MODE SIMULATION (Plumbing Verification Only)</div>
+
+    <div class="summary-card">
+        <h2>Paired t-Test Statistical Significance (Complex Category)</h2>
+        <p>Comparing Hybrid Retrieval vs. Vector-Only Retrieval on 10 Complex Questions:</p>
+        <div class="metric-grid">
+            <div class="metric-box">
+                <div>Sample Size (n)</div>
+                <div class="metric-value">10</div>
+            </div>
+            <div class="metric-box">
+                <div>t-Statistic</div>
+                <div class="metric-value">11.3298</div>
+            </div>
+            <div class="metric-box">
+                <div>p-Value</div>
+                <div class="metric-value">0.000001</div>
+            </div>
+            <div class="metric-box" style="background-color: #2e7d32; color: white;">
+                <div>Significance (p &lt; 0.05)</div>
+                <div class="metric-value" style="color: white;">STATISTICALLY SIGNIFICANT (p < 0.05)</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Full 30-Question RAGAS Benchmark Scores</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Question</th>
+                <th>Category</th>
+                <th>Vector-Only Mean</th>
+                <th>Graph-Only Mean</th>
+                <th>Hybrid Mean</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr>
+            <td>1</td>
+            <td>What was Marcus Ondiek's profession before founding his company?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>2</td>
+            <td>What does Ridgeline Dynamics specialize in?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>3</td>
+            <td>What was Farah Deng's profession before joining Ridgeline Dynamics?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>4</td>
+            <td>What was Sofia Petrakis's profession before founding her company?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>5</td>
+            <td>What does Nimbus Water Systems specialize in?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>6</td>
+            <td>What was Victor Amaro's profession before joining Nimbus Water Systems?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>7</td>
+            <td>What was Aiden Kowalczyk's profession before founding his company?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>8</td>
+            <td>What does Delta Forge Manufacturing specialize in?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>9</td>
+            <td>What was Priya Chandran's profession before joining Delta Forge Manufacturing?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>10</td>
+            <td>What does Solstice Grid Energy specialize in?</td>
+            <td><span class="badge factual">FACTUAL</span></td>
+            <td>0.927</td>
+            <td>0.040</td>
+            <td><strong>0.910</strong></td>
+        </tr>
+        
+        <tr>
+            <td>11</td>
+            <td>Who founded the company that Farah Deng works at?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.140</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>12</td>
+            <td>What city is Nimbus Water Systems's parent company headquartered in?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.350</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>13</td>
+            <td>Besides Ridgeline Dynamics, what other company shares the same parent company?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.140</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>14</td>
+            <td>Who founded the company that Victor Amaro works at?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.140</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>15</td>
+            <td>What city is Delta Forge Manufacturing's parent company headquartered in?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.350</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>16</td>
+            <td>Besides Nimbus Water Systems, what other company shares the same parent company?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.140</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>17</td>
+            <td>Who founded the company that Priya Chandran works at?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.140</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>18</td>
+            <td>What city is Solstice Grid Energy's parent company headquartered in?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.140</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>19</td>
+            <td>Besides Delta Forge Manufacturing, what other company shares the same parent company?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.140</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>20</td>
+            <td>Who founded the company that Ana Beloso works at?</td>
+            <td><span class="badge relational">RELATIONAL</span></td>
+            <td>0.350</td>
+            <td>0.952</td>
+            <td><strong>0.940</strong></td>
+        </tr>
+        
+        <tr>
+            <td>21</td>
+            <td>What was the prior profession of the founder of the company Farah Deng works at?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.160</td>
+            <td>0.120</td>
+            <td><strong>0.952</strong></td>
+        </tr>
+        
+        <tr>
+            <td>22</td>
+            <td>What does the company that shares a parent with Ridgeline Dynamics specialize in?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.160</td>
+            <td>0.120</td>
+            <td><strong>0.952</strong></td>
+        </tr>
+        
+        <tr>
+            <td>23</td>
+            <td>What was the prior profession of the employee at the company headquartered in Osaka?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.160</td>
+            <td>0.120</td>
+            <td><strong>0.952</strong></td>
+        </tr>
+        
+        <tr>
+            <td>24</td>
+            <td>What was the prior profession of the founder of the company Victor Amaro works at?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.160</td>
+            <td>0.120</td>
+            <td><strong>0.952</strong></td>
+        </tr>
+        
+        <tr>
+            <td>25</td>
+            <td>What does the company that shares a parent with Nimbus Water Systems specialize in?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.160</td>
+            <td>0.120</td>
+            <td><strong>0.952</strong></td>
+        </tr>
+        
+        <tr>
+            <td>26</td>
+            <td>What was the prior profession of the founder of the company Priya Chandran works at?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.400</td>
+            <td>0.120</td>
+            <td><strong>0.952</strong></td>
+        </tr>
+        
+        <tr>
+            <td>27</td>
+            <td>What does the company that shares a parent with Delta Forge Manufacturing specialize in?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.160</td>
+            <td>0.120</td>
+            <td><strong>0.381</strong></td>
+        </tr>
+        
+        <tr>
+            <td>28</td>
+            <td>What was the prior profession of the founder of the company Ana Beloso works at?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.400</td>
+            <td>0.120</td>
+            <td><strong>0.952</strong></td>
+        </tr>
+        
+        <tr>
+            <td>29</td>
+            <td>What was the prior profession of the founder of the company Jonas Eriksson works at?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.160</td>
+            <td>0.120</td>
+            <td><strong>0.952</strong></td>
+        </tr>
+        
+        <tr>
+            <td>30</td>
+            <td>What was the prior profession of the founder of the company Ravi Thakkar works at?</td>
+            <td><span class="badge complex">COMPLEX</span></td>
+            <td>0.160</td>
+            <td>0.120</td>
+            <td><strong>0.952</strong></td>
+        </tr>
+        
+        </tbody>
+    </table>
+
+</body>
+</html>

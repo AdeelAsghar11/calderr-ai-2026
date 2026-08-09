@@ -16,12 +16,18 @@ from rich.panel import Panel
 from rich.table import Table
 
 try:
+    # pyrefly: ignore [missing-import]
     from .graph_builder import build_knowledge_graph, render_pyvis_graph
+    # pyrefly: ignore [missing-import]
     from .query_agent import KnowledgeGraphQueryAgent
+    # pyrefly: ignore [missing-import]
     from .sample_corpus import CORPUS_PARAGRAPHS
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from graph_builder import build_knowledge_graph, render_pyvis_graph
+    # pyrefly: ignore [missing-import]
     from query_agent import KnowledgeGraphQueryAgent
+    # pyrefly: ignore [missing-import]
     from sample_corpus import CORPUS_PARAGRAPHS
 
 app = typer.Typer(help="Lab 6.2 Knowledge Graph Agent CLI")
