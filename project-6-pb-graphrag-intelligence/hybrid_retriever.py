@@ -1,7 +1,7 @@
 """
-hybrid_retriever.py — GraphRAG hybrid retrieval engine for Project 6-PB Phase 1.
+hybrid_retriever.py — GraphRAG hybrid retrieval engine using ChatGroq (llama-3.3-70b-versatile).
 
-Orchestrates vector search, graph traversal, context deduplication, and answer generation.
+Orchestrates vector search, graph traversal, context deduplication, and ChatGroq LLM answer generation.
 """
 
 from __future__ import annotations
@@ -9,26 +9,48 @@ from __future__ import annotations
 import os
 from typing import List, Literal, Optional, Tuple
 
+from dotenv import load_dotenv
+from langchain_groq import ChatGroq
+
 try:
+    # pyrefly: ignore [missing-import]
     from .corpus import FULL_CORPUS_PARAGRAPHS
+    # pyrefly: ignore [missing-import]
+    # pyrefly: ignore [missing-import]
     from .graph_retrieval import GraphRetriever
+    # pyrefly: ignore [missing-import]
     from .models import MethodResult, QuestionRecord
+    # pyrefly: ignore [missing-import]
     from .router import QueryRouter
+    # pyrefly: ignore [missing-import]
     from .vector_store import VectorRetriever
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from corpus import FULL_CORPUS_PARAGRAPHS
+    # pyrefly: ignore [missing-import]
     from graph_retrieval import GraphRetriever
+    # pyrefly: ignore [missing-import]
     from models import MethodResult, QuestionRecord
+    # pyrefly: ignore [missing-import]
     from router import QueryRouter
+    # pyrefly: ignore [missing-import]
     from vector_store import VectorRetriever
+
+# Load environment variables from .env in repository root
+load_dotenv()
 
 
 class GraphRAGHybridRetriever:
-    """GraphRAG Hybrid Retriever merging ChromaDB vector search and NetworkX graph traversal."""
+    """GraphRAG Hybrid Retriever merging ChromaDB vector search and NetworkX graph traversal with ChatGroq."""
 
-    def __init__(self, corpus: List[str] = FULL_CORPUS_PARAGRAPHS, use_real: bool = False) -> None:
+    def __init__(self, corpus: List[str] = FULL_CORPUS_PARAGRAPHS, use_real: bool = True) -> None:
         self.corpus = corpus
         self.use_real = use_real
+        api_key = os.getenv("GROQ_API_KEY")
+        if not api_key:
+            raise RuntimeError("GROQ_API_KEY environment variable is required. Ensure .env is in the root directory.")
+        self.llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
+
         self.vector_retriever = VectorRetriever(corpus=self.corpus)
         self.graph_retriever = GraphRetriever(corpus=self.corpus)
         self.router = QueryRouter(use_real=use_real)
@@ -83,33 +105,19 @@ class GraphRAGHybridRetriever:
         return dedup_paras, context_str
 
     def generate_answer(self, question: str, context: str) -> str:
-        """Generate final answer from retrieved context (stub mode vs ChatGroq real mode)."""
+        """Generate final answer from retrieved context using ChatGroq LLM."""
         if not context.strip():
             return "No relevant context found to answer the question."
 
-        if self.use_real:
-            return self._generate_answer_real(question, context)
-
-        return f"[Retrieved Context Summary]: {context}"
-
-    def _generate_answer_real(self, question: str, context: str) -> str:
-        """Real LLM answer generation using ChatGroq. Raises RuntimeError if GROQ_API_KEY missing."""
-        api_key = os.getenv("GROQ_API_KEY")
-        if not api_key:
-            raise RuntimeError("GROQ_API_KEY environment variable is required for --real mode.")
-
-        from langchain_groq import ChatGroq
-
         prompt = (
-            "You are a helpful QA assistant.\n"
+            "You are a helpful, precise QA assistant.\n"
             "Given the following retrieved context, answer the question concisely and accurately.\n\n"
             f"Context:\n{context}\n\n"
             f"Question: {question}\n\n"
             "Answer:"
         )
 
-        llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
-        res = llm.invoke(prompt)
+        res = self.llm.invoke(prompt)
         return str(res.content).strip()
 
     def process_question(

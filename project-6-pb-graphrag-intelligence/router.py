@@ -1,32 +1,62 @@
 """
-router.py — Pre-retrieval Query Router classifying questions into factual, relational, or complex.
+router.py — Pre-retrieval Query Router using ChatGroq (llama-3.3-70b-versatile).
 
-In stub mode: uses explicit, inspectable phrase-cue heuristics.
-In real mode: uses ChatGroq (llama-3.3-70b-versatile) zero-shot classification.
+Classifies natural language questions into factual, relational, or complex categories.
 """
 
 from __future__ import annotations
 
 import os
 from typing import Literal
+from dotenv import load_dotenv
+from langchain_groq import ChatGroq
 
 try:
+    # pyrefly: ignore [missing-import]  
     from .models import QuestionRecord, RouterDecision
 except ImportError:
-    from models import QuestionRecord, RouterDecision
+    # pyrefly: ignore [missing-import]
+    from models import QuestionRecord
+    # pyrefly: ignore [missing-import]
+    from models import RouterDecision
+
+# Load environment variables from .env in repository root
+load_dotenv()
 
 
 class QueryRouter:
-    """Query router for deciding retrieval strategy before execution."""
+    """Pre-retrieval Query Router powered by ChatGroq LLM."""
 
-    def __init__(self, use_real: bool = False) -> None:
+    def __init__(self, use_real: bool = True) -> None:
         self.use_real = use_real
+        api_key = os.getenv("GROQ_API_KEY")
+        if not api_key:
+            raise RuntimeError("GROQ_API_KEY environment variable is required. Ensure .env is in the root directory.")
+        self.llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
 
     def classify(self, question: str) -> Literal["factual", "relational", "complex"]:
-        """Classify a natural language question into 'factual', 'relational', or 'complex'."""
-        if self.use_real:
-            return self._classify_real(question)
-        return self._classify_stub(question)
+        """Classify a natural language question into 'factual', 'relational', or 'complex' using ChatGroq."""
+        prompt = (
+            "You are an expert database query router.\n"
+            "Classify the user question into exactly one of three categories:\n"
+            "- 'factual': questions asking for static descriptive properties or background facts of a single entity (e.g. profession, specialty).\n"
+            "- 'relational': questions requiring multi-hop graph path connections across entities (e.g. parent company, founder, city location).\n"
+            "- 'complex': questions requiring both a multi-hop relational path AND a descriptive factual detail about an entity reached along the path.\n\n"
+            f"Question: {question}\n\n"
+            "Return ONLY one word: factual, relational, or complex."
+        )
+
+        res = self.llm.invoke(prompt)
+        cat_str = str(res.content).strip().lower()
+
+        if "complex" in cat_str:
+            return "complex"
+        elif "relational" in cat_str:
+            return "relational"
+        elif "factual" in cat_str:
+            return "factual"
+
+        return "complex"
 
     def route(self, question_record: QuestionRecord) -> RouterDecision:
         """Evaluate question against router classification rules and produce RouterDecision."""
@@ -39,81 +69,3 @@ class QueryRouter:
             actual_category=question_record.category,
             correct=correct,
         )
-
-    def _classify_stub(self, question: str) -> Literal["factual", "relational", "complex"]:
-        """
-        Inspectable phrase-cue heuristic classification.
-        Does NOT look at target answer keywords — operates purely on query syntax/semantics.
-        """
-        q_lower = question.lower()
-
-        factual_cues = [
-            "profession",
-            "specialize",
-            "specializes",
-            "focus on",
-            "focuses on",
-            "before founding",
-            "before joining",
-            "prior profession",
-            "what does",
-            "what did",
-        ]
-
-        relational_cues = [
-            "who founded",
-            "founder of",
-            "parent company",
-            "shares the same parent",
-            "shares a parent",
-            "headquartered in",
-            "located in",
-            "what city",
-            "city is",
-            "works at",
-            "employee at",
-            "is part of",
-            "company that",
-        ]
-
-        has_factual = any(cue in q_lower for cue in factual_cues)
-        has_relational = any(cue in q_lower for cue in relational_cues)
-
-        if has_factual and has_relational:
-            return "complex"
-        elif has_factual and not has_relational:
-            return "factual"
-        elif has_relational and not has_factual:
-            return "relational"
-        else:
-            return "factual"
-
-    def _classify_real(self, question: str) -> Literal["factual", "relational", "complex"]:
-        """ChatGroq LLM router classification. Raises RuntimeError if GROQ_API_KEY missing."""
-        api_key = os.getenv("GROQ_API_KEY")
-        if not api_key:
-            raise RuntimeError("GROQ_API_KEY environment variable is required for --real mode.")
-
-        from langchain_groq import ChatGroq
-
-        prompt = (
-            "You are a database query router. Classify the user question into exactly one of three categories:\n"
-            "- 'factual': questions asking for static descriptive properties or background facts of a single entity (e.g. profession, specialty).\n"
-            "- 'relational': questions requiring multi-hop graph path connections across entities (e.g. parent company, founder, city location).\n"
-            "- 'complex': questions requiring both a multi-hop relational path AND a descriptive factual detail about an entity reached along the path.\n\n"
-            f"Question: {question}\n\n"
-            "Return ONLY one word: factual, relational, or complex."
-        )
-
-        llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
-        res = llm.invoke(prompt)
-        cat_str = str(res.content).strip().lower()
-
-        if "complex" in cat_str:
-            return "complex"
-        elif "relational" in cat_str:
-            return "relational"
-        elif "factual" in cat_str:
-            return "factual"
-
-        return "complex"
