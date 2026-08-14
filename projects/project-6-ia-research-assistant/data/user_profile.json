@@ -1,0 +1,13 @@
+{
+  "known_topics": [
+    "explainable AI",
+    "Machine learning algorithms",
+    "stacking",
+    "boosting",
+    "ML"
+  ],
+  "preferred_depth": "detailed",
+  "communication_style": "paragraph",
+  "open_questions": [],
+  "last_updated": "2026-08-10T17:45:25.177114+00:00"
+}

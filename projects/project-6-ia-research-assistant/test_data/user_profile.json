@@ -1,0 +1,10 @@
+{
+  "known_topics": [
+    "self-attention",
+    "transformers"
+  ],
+  "preferred_depth": "detailed",
+  "communication_style": "technical and structured",
+  "open_questions": [],
+  "last_updated": "2026-08-14T22:40:50.001801+00:00"
+}
