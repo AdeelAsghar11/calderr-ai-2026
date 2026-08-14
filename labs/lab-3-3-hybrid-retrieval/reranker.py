@@ -40,11 +40,17 @@ if hasattr(sys.stderr, "reconfigure"):
 import textwrap
 import time
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from langchain_core.documents import Document
+# pyrefly: ignore [missing-import]
 from rich.columns import Columns
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 # pyrefly: ignore [missing-import]
@@ -68,6 +74,7 @@ class CrossEncoderReranker:
     """
 
     def __init__(self, model_name: str = RERANKER_MODEL) -> None:
+        # pyrefly: ignore [missing-import]
         from sentence_transformers import CrossEncoder
         console.print(f"[dim]Loading cross-encoder: {model_name}...[/dim]")
         self._model      = CrossEncoder(model_name)

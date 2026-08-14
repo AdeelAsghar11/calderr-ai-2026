@@ -7,6 +7,7 @@ Defines schemas for EvaluationRecord (per-sample scores) and SignificanceResult 
 from __future__ import annotations
 
 from typing import Literal
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
 
 

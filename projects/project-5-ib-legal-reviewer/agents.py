@@ -7,9 +7,11 @@ Supports deterministic offline Stub mode and online LLM mode (--real) via ChatGr
 
 import os
 from typing import Literal
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
 
 try:
+    # pyrefly: ignore [missing-import]
     from models import (
         ClauseFinding,
         Challenge,
@@ -17,6 +19,7 @@ try:
         ReviewReport,
     )
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from project_5_ib_legal_reviewer.models import (
         ClauseFinding,
         Challenge,
@@ -271,6 +274,7 @@ def _stub_judge_synthesis(
 def _get_groq_llm():
     """Returns ChatGroq instance or raises clean RuntimeError if GROQ_API_KEY is missing."""
     try:
+        # pyrefly: ignore [missing-import]
         from dotenv import load_dotenv
         load_dotenv()
     except ImportError:
@@ -279,6 +283,7 @@ def _get_groq_llm():
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
         raise RuntimeError("GROQ_API_KEY environment variable is required for --real mode.")
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
     return ChatGroq(model="llama-3.3-70b-versatile", temperature=0, api_key=api_key)
 

@@ -7,9 +7,11 @@ and peer debate cross-examination inspection.
 import sys
 import os
 from pathlib import Path
+# pyrefly: ignore [missing-import]
 import streamlit as st
 
 try:
+    # pyrefly: ignore [missing-import]
     from dotenv import load_dotenv
     load_dotenv()
 except ImportError:
@@ -21,10 +23,14 @@ if str(PROJECT_DIR) not in sys.path:
     sys.path.insert(0, str(PROJECT_DIR))
 
 try:
+    # pyrefly: ignore [missing-import]
     from agents import run_legal_review, SPECIALIST_ROLES
+    # pyrefly: ignore [missing-import]
     from models import ReviewReport
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from project_5_ib_legal_reviewer.agents import run_legal_review, SPECIALIST_ROLES
+    # pyrefly: ignore [missing-import]
     from project_5_ib_legal_reviewer.models import ReviewReport
 
 st.set_page_config(

@@ -19,8 +19,11 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 # Reconfigure stdout to support UTF-8 on Windows
@@ -61,6 +64,7 @@ def fetch_article(topic: str) -> dict | None:
     Returns None on failure.
     """
     try:
+        # pyrefly: ignore [missing-import]
         import wikipedia  # pip install wikipedia
     except ImportError:
         console.print("[red]Missing package: pip install wikipedia[/red]")

@@ -53,13 +53,21 @@ import uuid
 from datetime import datetime, timezone
 from typing import Annotated, Callable, Literal, TypedDict
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from langchain_core.tools import tool
+# pyrefly: ignore [missing-import]
 from langgraph.graph import END, START, StateGraph
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 load_dotenv()
@@ -365,6 +373,7 @@ def make_stub_synthesizer() -> Callable[[ResearchHandoff], SynthesisReport]:
 def make_real_synthesizer() -> Callable[[ResearchHandoff], SynthesisReport]:
     """Groq-backed synthesis -- matches the rest of the repo's stack
     (llama-3.3-70b-versatile via ChatGroq). Requires GROQ_API_KEY."""
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     if not os.environ.get("GROQ_API_KEY"):

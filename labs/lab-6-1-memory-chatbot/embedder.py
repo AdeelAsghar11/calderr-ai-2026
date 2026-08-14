@@ -9,7 +9,9 @@ Reuses the repo's established pattern from lab-3-1-semantic-search:
 from __future__ import annotations
 
 from typing import List
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 from sentence_transformers import SentenceTransformer
 
 

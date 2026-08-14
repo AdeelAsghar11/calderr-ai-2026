@@ -7,6 +7,7 @@ Defines schemas for QueryModeRequest, QueryModeResponse, and EvaluationReportSum
 from __future__ import annotations
 
 from typing import Dict, Literal
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
 
 

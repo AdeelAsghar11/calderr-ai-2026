@@ -14,14 +14,19 @@ Handles Docker availability gracefully: skips cleanly if docker info fails.
 import os
 import subprocess
 import sys
+# pyrefly: ignore [missing-import]
 import pytest
 
 # Insert project directory to sys.path so src imports resolve cleanly
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+# pyrefly: ignore [missing-import]
 from src.devops_agent import run_devops_agent
+# pyrefly: ignore [missing-import]
 from src.pipeline import run_phase1_pipeline, run_phase3_pipeline
+# pyrefly: ignore [missing-import]
 from src.schema import DockerBuildResult, GeneratedComponent, ValidationReport
+# pyrefly: ignore [missing-import]
 from src.validation_agent import _is_container_running, run_validation_agent
 
 FIXED_TODO_SPEC = (

@@ -49,12 +49,19 @@ import os
 from pathlib import Path
 from typing import Callable, Literal, TypedDict
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from langgraph.graph import END, START, StateGraph
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 load_dotenv()
@@ -339,6 +346,7 @@ def _get_groq_client():
             "GROQ_API_KEY environment variable is missing. "
             "Please set GROQ_API_KEY in your .env file or environment to run with --real."
         )
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     return ChatGroq(model="llama-3.3-70b-versatile", temperature=0)

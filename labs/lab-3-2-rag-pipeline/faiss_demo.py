@@ -29,10 +29,15 @@ import sys
 import time
 from pathlib import Path
 
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 app     = typer.Typer(help="FAISS index comparison — Lab 3.2", add_completion=False)
@@ -53,6 +58,7 @@ def load_lab31() -> tuple[np.ndarray, list[str]]:
         sys.exit(1)
 
     sys.path.insert(0, str(LAB31_DIR))
+    # pyrefly: ignore [missing-import]
     from sentences import SENTENCES  # type: ignore
 
     embeddings = np.load(CACHE_FILE).astype("float32")  # FAISS requires float32
@@ -63,6 +69,7 @@ def load_lab31() -> tuple[np.ndarray, list[str]]:
 # ── Embed a query ─────────────────────────────────────────────────────────────
 def embed_query(query: str) -> np.ndarray:
     """Embed a single query string using the same model as Lab 3.1."""
+    # pyrefly: ignore [missing-import]
     from sentence_transformers import SentenceTransformer
     model = SentenceTransformer("all-MiniLM-L6-v2")
     vec   = model.encode([query], normalize_embeddings=True).astype("float32")
@@ -80,6 +87,7 @@ def build_flat(embeddings: np.ndarray):
     Pros:  guaranteed exact results, simple, no training step
     Cons:  O(n·d) per query — slow for n > ~1M vectors
     """
+    # pyrefly: ignore [missing-import]
     import faiss
     d     = embeddings.shape[1]          # 384
     index = faiss.IndexFlatIP(d)         # IP = inner product (cosine on normed vecs)
@@ -100,6 +108,7 @@ def build_ivf(embeddings: np.ndarray, nlist: int = 10):
            requires training before adding vectors
            nlist should be sqrt(n) roughly; here with 100 vecs, 10 is fine
     """
+    # pyrefly: ignore [missing-import]
     import faiss
     d          = embeddings.shape[1]
     quantizer  = faiss.IndexFlatIP(d)   # used to assign vectors to cells
@@ -181,6 +190,7 @@ def search(
         t_ivf_search = time.perf_counter() - t0
 
         # Side-by-side comparison
+        # pyrefly: ignore [missing-import]
         from rich.columns import Columns
         flat_table = results_table(
             flat_scores, flat_idx, sentences,

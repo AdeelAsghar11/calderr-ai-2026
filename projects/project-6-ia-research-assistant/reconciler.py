@@ -13,12 +13,16 @@ import re
 from datetime import datetime, timezone
 from typing import List, Tuple
 
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from langchain_groq import ChatGroq
 
 try:
+    # pyrefly: ignore [missing-import]
     from .models import InteractionLog, ProfileFact, ProfileUpdateDecision, UserProfile
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from models import InteractionLog, ProfileUpdateDecision, UserProfile, ProfileFact
 
 # Load environment variables from .env in repository root

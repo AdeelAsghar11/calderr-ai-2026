@@ -8,6 +8,7 @@ import os
 import sys
 import uuid
 import subprocess
+# pyrefly: ignore [missing-import]
 import pytest
 
 # Add project root to sys.path

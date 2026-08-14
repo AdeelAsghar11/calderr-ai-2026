@@ -7,13 +7,16 @@ QA and Security audit summaries, and honest Docker validation status reporting.
 
 import os
 import sys
+# pyrefly: ignore [missing-import]
 import streamlit as st
 from typing import Optional
 
 # Ensure src module resolution
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+# pyrefly: ignore [missing-import]
 from src.pipeline import run_full_pipeline
+# pyrefly: ignore [missing-import]
 from src.schema import PipelineRun
 
 

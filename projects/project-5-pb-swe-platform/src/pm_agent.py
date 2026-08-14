@@ -7,6 +7,7 @@ and live LLM structured output via ChatGroq.
 """
 
 import os
+# pyrefly: ignore [missing-import]
 from src.schema import Task, TaskList
 
 
@@ -63,6 +64,7 @@ def run_pm_agent(feature_spec: str, use_real: bool = False) -> TaskList:
     if not api_key:
         raise RuntimeError("GROQ_API_KEY environment variable is required for real mode execution.")
 
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     llm = ChatGroq(

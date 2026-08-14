@@ -13,8 +13,11 @@ from __future__ import annotations
 import os
 from typing import List, Optional, Tuple
 
+# pyrefly: ignore [missing-import]
 import networkx as nx
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 from sentence_transformers import SentenceTransformer
 
 try:
@@ -268,6 +271,7 @@ class KnowledgeGraphQueryAgent:
         if not api_key:
             raise RuntimeError("GROQ_API_KEY environment variable is required for --real mode.")
 
+        # pyrefly: ignore [missing-import]
         from langchain_groq import ChatGroq
 
         path_str = " -> ".join([f"{h.from_entity} --({h.relationship} [{h.direction}])--> {h.to_entity}" for h in path])

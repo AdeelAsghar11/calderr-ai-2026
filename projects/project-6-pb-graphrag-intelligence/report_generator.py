@@ -11,8 +11,10 @@ from pathlib import Path
 from typing import List
 
 try:
+    # pyrefly: ignore [missing-import]
     from .eval_models import EvaluationRecord, SignificanceResult
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from eval_models import EvaluationRecord, SignificanceResult
 
 

@@ -8,6 +8,7 @@ produce code adhering strictly to every specified endpoint path and payload cont
 
 import os
 import ast
+# pyrefly: ignore [missing-import]
 from src.schema import GeneratedComponent, SystemContract
 
 
@@ -82,6 +83,7 @@ def delete_todo(todo_id: int):
         if not api_key:
             raise RuntimeError("GROQ_API_KEY environment variable is required for real mode execution.")
 
+        # pyrefly: ignore [missing-import]
         from langchain_groq import ChatGroq
 
         llm = ChatGroq(

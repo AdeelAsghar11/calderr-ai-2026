@@ -10,6 +10,7 @@ Run: python 00_first_graph.py
 
 from typing import TypedDict
 
+# pyrefly: ignore [missing-import]
 from langgraph.graph import StateGraph, START, END
 
 

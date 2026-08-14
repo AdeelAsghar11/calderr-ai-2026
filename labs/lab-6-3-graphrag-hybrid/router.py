@@ -11,8 +11,10 @@ import os
 from typing import Literal
 
 try:
+    # pyrefly: ignore [missing-import]
     from .models import QuestionRecord, RouterDecision
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from models import QuestionRecord, RouterDecision
 
 
@@ -102,6 +104,7 @@ class QueryRouter:
         if not api_key:
             raise RuntimeError("GROQ_API_KEY environment variable is required for --real mode.")
 
+        # pyrefly: ignore [missing-import]
         from langchain_groq import ChatGroq
 
         prompt = (

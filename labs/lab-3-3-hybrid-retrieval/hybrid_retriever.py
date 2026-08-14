@@ -31,16 +31,27 @@ import time
 from pathlib import Path
 from typing import Optional
 
+# pyrefly: ignore [missing-import]
 import chromadb
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+# pyrefly: ignore [missing-import]
 from langchain_classic.retrievers import EnsembleRetriever
+# pyrefly: ignore [missing-import]
 from langchain_community.retrievers import BM25Retriever
+# pyrefly: ignore [missing-import]
 from langchain_core.documents import Document
+# pyrefly: ignore [missing-import]
 from langchain_chroma import Chroma
+# pyrefly: ignore [missing-import]
 from langchain_huggingface import HuggingFaceEmbeddings
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 app     = typer.Typer(help="Hybrid retriever — Lab 3.3", add_completion=False)
@@ -200,6 +211,7 @@ def search(
 
     if show_sources:
         hybrid, bm25_only, vector_only = retriever.retrieve_with_sources(query, top_k)
+        # pyrefly: ignore [missing-import]
         from rich.columns import Columns
         tables = [
             doc_table(hybrid,      f"Hybrid top-{top_k} (RRF fusion)", "blue"),

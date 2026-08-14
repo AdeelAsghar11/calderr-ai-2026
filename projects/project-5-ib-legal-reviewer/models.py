@@ -4,6 +4,7 @@ Defines schemas for specialist findings, cross-examination challenges, final fin
 """
 
 from typing import Literal
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
 
 

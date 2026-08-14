@@ -9,13 +9,18 @@ from __future__ import annotations
 
 import re
 from typing import Dict, List, Optional, Set, Tuple
+# pyrefly: ignore [missing-import]
 import networkx as nx
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 from sentence_transformers import SentenceTransformer
 
 try:
+    # pyrefly: ignore [missing-import]
     from .corpus import FULL_CORPUS_PARAGRAPHS, KNOWN_ENTITIES
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from corpus import FULL_CORPUS_PARAGRAPHS, KNOWN_ENTITIES
 
 

@@ -13,7 +13,9 @@ import time
 from pathlib import Path
 from typing import List, Tuple
 
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 from sentence_transformers import SentenceTransformer
 
 # ── Available models ────────────────────────────────────────────────────────────

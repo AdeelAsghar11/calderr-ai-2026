@@ -13,6 +13,7 @@ import typing
 from pathlib import Path
 from typing import List, Set
 
+# pyrefly: ignore [missing-import]
 import networkx as nx
 
 LAB62_DIR = Path(__file__).resolve().parent.parent / "lab-6-2-knowledge-graph-agent"

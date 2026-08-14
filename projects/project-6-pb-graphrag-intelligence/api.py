@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 from typing import List
 
+# pyrefly: ignore [missing-import]
 from fastapi import FastAPI, HTTPException
 
 PROJ_DIR = Path(__file__).resolve().parent
@@ -20,18 +21,30 @@ if str(PROJ_DIR) not in sys.path:
     sys.path.insert(0, str(PROJ_DIR))
 
 try:
+    # pyrefly: ignore [missing-import]
     from .api_models import EvaluationReportSummaryResponse, QueryModeRequest, QueryModeResponse
+    # pyrefly: ignore [missing-import]
     from .dataset import get_verified_benchmark_dataset
+    # pyrefly: ignore [missing-import]
     from .evaluator import EvaluationRunner
+    # pyrefly: ignore [missing-import]
     from .hybrid_retriever import GraphRAGHybridRetriever
+    # pyrefly: ignore [missing-import]
     from .models import QuestionRecord
+    # pyrefly: ignore [missing-import]
     from .router import QueryRouter
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from api_models import EvaluationReportSummaryResponse, QueryModeRequest, QueryModeResponse
+    # pyrefly: ignore [missing-import]
     from dataset import get_verified_benchmark_dataset
+    # pyrefly: ignore [missing-import]
     from evaluator import EvaluationRunner
+    # pyrefly: ignore [missing-import]
     from hybrid_retriever import GraphRAGHybridRetriever
+    # pyrefly: ignore [missing-import]
     from models import QuestionRecord
+    # pyrefly: ignore [missing-import]
     from router import QueryRouter
 
 app = FastAPI(

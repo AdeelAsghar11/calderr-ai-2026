@@ -10,15 +10,19 @@ import sys
 # Ensure project directory is in python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
 
 load_dotenv()
 
 import operator
 from typing import Annotated, Any, Callable, Dict, Optional, TypedDict
+# pyrefly: ignore [missing-import]
 import yaml
 
+# pyrefly: ignore [missing-import]
 from langgraph.graph import END, START, StateGraph
+# pyrefly: ignore [missing-import]
 from langgraph.types import interrupt
 
 # pyrefly: ignore [missing-import]
@@ -63,6 +67,7 @@ def make_llm_node(node_spec, llm_factory: Optional[Callable] = None):
             if not api_key:
                 raise RuntimeError("GROQ_API_KEY environment variable is missing. Cannot execute LLM node.")
             try:
+                # pyrefly: ignore [missing-import]
                 from langchain_groq import ChatGroq
                 llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=node_spec.temperature or 0.0)
                 res = llm.invoke(prompt)

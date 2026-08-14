@@ -8,7 +8,9 @@ Phase 2 Verification Tests
 import os
 import sys
 import uuid
+# pyrefly: ignore [missing-import]
 import pytest
+# pyrefly: ignore [missing-import]
 from fastapi.testclient import TestClient
 
 # Add project root to sys.path

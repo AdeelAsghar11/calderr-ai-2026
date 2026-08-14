@@ -11,8 +11,10 @@ from pathlib import Path
 from typing import List, Optional
 
 try:
+    # pyrefly: ignore [missing-import]
     from .models import InteractionLog
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from models import InteractionLog
 
 DEFAULT_DATA_DIR = Path(__file__).resolve().parent / "data"

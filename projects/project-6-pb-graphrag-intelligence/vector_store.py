@@ -8,12 +8,16 @@ Retrieves top-k closest paragraphs by cosine similarity.
 from __future__ import annotations
 
 from typing import List
+# pyrefly: ignore [missing-import]
 import chromadb
+# pyrefly: ignore [missing-import]
 from sentence_transformers import SentenceTransformer
 
 try:
+    # pyrefly: ignore [missing-import]
     from .corpus import FULL_CORPUS_PARAGRAPHS
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from corpus import FULL_CORPUS_PARAGRAPHS
 
 

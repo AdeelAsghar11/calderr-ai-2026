@@ -35,9 +35,13 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+# pyrefly: ignore [missing-import]
 import chromadb
+# pyrefly: ignore [missing-import]
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+# pyrefly: ignore [missing-import]
 from dotenv import find_dotenv, load_dotenv
+# pyrefly: ignore [missing-import]
 from langchain_core.documents import Document
 
 load_dotenv(find_dotenv())
@@ -135,6 +139,7 @@ class WebRetriever:
     def retrieve(self, query: str, top_k: int = 5) -> list[Document]:
         """Search DuckDuckGo and return results as Documents with retry-on-empty/error backoff."""
         try:
+            # pyrefly: ignore [missing-import]
             from duckduckgo_search import DDGS
         except ImportError:
             raise RuntimeError("Install duckduckgo-search: uv pip install duckduckgo-search")

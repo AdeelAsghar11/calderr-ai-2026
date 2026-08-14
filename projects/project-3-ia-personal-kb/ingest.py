@@ -16,12 +16,19 @@ Commands
 
 from __future__ import annotations
 
+# pyrefly: ignore [missing-import]
 import chromadb
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+# pyrefly: ignore [missing-import]
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.progress import BarColumn, MofNCompleteColumn, Progress, TextColumn
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 # pyrefly: ignore [missing-import]

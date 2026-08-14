@@ -30,18 +30,26 @@ pointed at this project's own ChromaDB collection (personal_kb).
 
 from __future__ import annotations
 
+# pyrefly: ignore [missing-import]
 import chromadb
+# pyrefly: ignore [missing-import]
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+# pyrefly: ignore [missing-import]
 from langchain_community.retrievers import BM25Retriever
+# pyrefly: ignore [missing-import]
 from langchain_core.documents import Document
+# pyrefly: ignore [missing-import]
 from langchain_chroma import Chroma
+# pyrefly: ignore [missing-import]
 from langchain_huggingface import HuggingFaceEmbeddings
+# pyrefly: ignore [missing-import]
 from rich.console import Console
 
 # EnsembleRetriever moved from langchain.retrievers to langchain_classic.retrievers
 # in LangChain v1.0+. Try the new location first, fall back to the old one so
 # this works on either version without needing to know which is installed.
 try:
+    # pyrefly: ignore [missing-import]
     from langchain_classic.retrievers import EnsembleRetriever
 except ImportError:
     # pyrefly: ignore [missing-import]
@@ -109,6 +117,7 @@ class PersonalHybridRetriever:
         # only a cross-encoder does joint attention over the pair.
         self._reranker = None
         if use_reranker:
+            # pyrefly: ignore [missing-import]
             from sentence_transformers import CrossEncoder
             console.print("[dim]Loading cross-encoder re-ranker (BAAI/bge-reranker-base)...[/dim]")
             self._reranker = CrossEncoder("BAAI/bge-reranker-base")

@@ -7,7 +7,9 @@ Self-contained wrapper producing L2-normalized 384-dimensional embeddings for me
 from __future__ import annotations
 
 from typing import List
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 from sentence_transformers import SentenceTransformer
 
 

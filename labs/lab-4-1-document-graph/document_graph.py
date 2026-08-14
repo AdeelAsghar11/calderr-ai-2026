@@ -22,10 +22,15 @@ Usage:
 from pathlib import Path
 from typing import TypedDict
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from langgraph.graph import StateGraph, START, END
+# pyrefly: ignore [missing-import]
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 app = typer.Typer()
@@ -131,6 +136,7 @@ def split_node(state: DocumentState) -> dict:
 def chunk_node(state: DocumentState) -> dict:
     """Reached from both branches, so it has to handle either case:
     'parts' populated (came via split_node) or absent (came directly
+    # pyrefly: ignore [missing-import]
     from validate_node)."""
     fine_splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP
@@ -183,6 +189,7 @@ def get_embedding_model():
     """Real embedding model, same one used since Week 1. Imported lazily
     so this module doesn't require sentence-transformers/torch just to
     be imported for testing with a fake embedder."""
+    # pyrefly: ignore [missing-import]
     from langchain_huggingface import HuggingFaceEmbeddings
 
     return HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")

@@ -7,12 +7,16 @@ Compares hybrid vs vector-only evaluation scores on complex questions to prove s
 from __future__ import annotations
 
 from typing import List
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 from scipy import stats
 
 try:
+    # pyrefly: ignore [missing-import]
     from .eval_models import EvaluationRecord, SignificanceResult
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from eval_models import EvaluationRecord, SignificanceResult
 
 

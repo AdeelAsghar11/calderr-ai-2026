@@ -16,18 +16,28 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Optional, Tuple
 
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from langchain_groq import ChatGroq
 
 try:
+    # pyrefly: ignore [missing-import]
     from .episodic_store import EpisodicStore
+    # pyrefly: ignore [missing-import]
     from .models import InteractionLog, ProfileUpdateDecision, UserProfile
+    # pyrefly: ignore [missing-import]
     from .reconciler import FactExtractor, ProfileReconciler
+    # pyrefly: ignore [missing-import]
     from .semantic_store import SemanticStore
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from episodic_store import EpisodicStore
+    # pyrefly: ignore [missing-import]
     from models import InteractionLog, ProfileUpdateDecision, UserProfile
+    # pyrefly: ignore [missing-import]
     from reconciler import FactExtractor, ProfileReconciler
+    # pyrefly: ignore [missing-import]
     from semantic_store import SemanticStore
 
 # Load environment variables from .env in repository root

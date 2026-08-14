@@ -5,6 +5,7 @@ Schema definitions and Pydantic models for YAML Workflow validation.
 from __future__ import annotations
 
 from typing import Any, Dict, List, Literal, Optional
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field, model_validator
 
 

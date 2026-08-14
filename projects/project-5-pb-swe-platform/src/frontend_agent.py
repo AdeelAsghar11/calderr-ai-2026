@@ -7,6 +7,7 @@ In real mode, uses ChatGroq to generate dynamic client code adhering strictly to
 """
 
 import os
+# pyrefly: ignore [missing-import]
 from src.schema import GeneratedComponent, SystemContract
 
 
@@ -105,6 +106,7 @@ def run_frontend_agent(contract: SystemContract, output_dir: str, use_real: bool
         if not api_key:
             raise RuntimeError("GROQ_API_KEY environment variable is required for real mode execution.")
 
+        # pyrefly: ignore [missing-import]
         from langchain_groq import ChatGroq
 
         llm = ChatGroq(

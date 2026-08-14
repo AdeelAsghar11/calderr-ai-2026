@@ -11,14 +11,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Optional
 
+# pyrefly: ignore [missing-import]
 import chromadb
+# pyrefly: ignore [missing-import]
 import numpy as np
 
 try:
+    # pyrefly: ignore [missing-import]
     from .embedder import MemoryEmbedder
+    # pyrefly: ignore [missing-import]
     from .models import InteractionLog, RetrievedMemory
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from embedder import MemoryEmbedder
+    # pyrefly: ignore [missing-import]
     from models import InteractionLog, RetrievedMemory
 
 DEFAULT_DATA_DIR = Path(__file__).resolve().parent / "data"

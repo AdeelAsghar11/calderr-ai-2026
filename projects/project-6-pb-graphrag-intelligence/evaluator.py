@@ -12,15 +12,22 @@ import os
 import re
 from typing import List, Literal, Optional, Tuple
 
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
 
 try:
+    # pyrefly: ignore [missing-import]
     from .eval_models import EvaluationRecord
+    # pyrefly: ignore [missing-import]
     from .hybrid_retriever import GraphRAGHybridRetriever
+    # pyrefly: ignore [missing-import]
     from .models import QuestionRecord
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from eval_models import EvaluationRecord
+    # pyrefly: ignore [missing-import]
     from hybrid_retriever import GraphRAGHybridRetriever
+    # pyrefly: ignore [missing-import]
     from models import QuestionRecord
 
 load_dotenv()
@@ -111,6 +118,7 @@ class EvaluationRunner:
         if not api_key:
             raise RuntimeError("GROQ_API_KEY environment variable is required for --real mode.")
 
+        # pyrefly: ignore [missing-import]
         from langchain_groq import ChatGroq
 
         res = self.retriever.process_question(question_record, override_method=method)

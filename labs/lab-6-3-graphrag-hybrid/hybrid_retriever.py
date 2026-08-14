@@ -123,6 +123,7 @@ class GraphRAGHybridRetriever:
         if not api_key:
             raise RuntimeError("GROQ_API_KEY environment variable is required for --real mode.")
 
+        # pyrefly: ignore [missing-import]
         from langchain_groq import ChatGroq
 
         prompt = (

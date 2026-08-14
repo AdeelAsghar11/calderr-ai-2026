@@ -10,15 +10,21 @@ Tests QA and Security quality gate agents across 4 required test cases:
 
 import os
 import sys
+# pyrefly: ignore [missing-import]
 import pytest
 
 # Insert project directory to sys.path so src imports resolve cleanly
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+# pyrefly: ignore [missing-import]
 from src.pipeline import run_phase1_pipeline, run_phase2_pipeline
+# pyrefly: ignore [missing-import]
 from src.pm_agent import run_pm_agent
+# pyrefly: ignore [missing-import]
 from src.qa_agent import run_qa_agent
+# pyrefly: ignore [missing-import]
 from src.security_agent import run_security_agent
+# pyrefly: ignore [missing-import]
 from src.schema import GeneratedComponent, QAReport, SecurityReport
 
 FIXED_TODO_SPEC = (

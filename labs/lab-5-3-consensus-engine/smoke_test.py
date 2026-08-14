@@ -24,6 +24,7 @@ lab_dir = Path(__file__).parent
 if str(lab_dir) not in sys.path:
     sys.path.insert(0, str(lab_dir))
 
+# pyrefly: ignore [missing-import]
 from consensus_engine import (
     ConsensusVerdict,
     SpecialistOpinion,

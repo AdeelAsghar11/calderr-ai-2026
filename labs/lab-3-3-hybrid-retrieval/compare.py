@@ -29,16 +29,27 @@ if hasattr(sys.stderr, "reconfigure"):
 import textwrap
 import time
 
+# pyrefly: ignore [missing-import]
 import chromadb
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+# pyrefly: ignore [missing-import]
 from dotenv import find_dotenv, load_dotenv
+# pyrefly: ignore [missing-import]
 from langchain_core.documents import Document
+# pyrefly: ignore [missing-import]
 from langchain_huggingface import HuggingFaceEmbeddings
+# pyrefly: ignore [missing-import]
 from langchain_chroma import Chroma
+# pyrefly: ignore [missing-import]
 from rich.columns import Columns
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 # pyrefly: ignore [missing-import]

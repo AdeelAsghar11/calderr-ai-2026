@@ -114,6 +114,7 @@ class MemoryChatbot:
                 "GROQ_API_KEY environment variable is required for --real mode."
             )
 
+        # pyrefly: ignore [missing-import]
         from langchain_groq import ChatGroq
 
         context_lines = []

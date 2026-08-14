@@ -26,12 +26,19 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+# pyrefly: ignore [missing-import]
 import chromadb
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+# pyrefly: ignore [missing-import]
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.progress import BarColumn, MofNCompleteColumn, Progress, TextColumn
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 app     = typer.Typer(help="ChromaDB ingestion pipeline — Lab 3.2", add_completion=False)

@@ -8,6 +8,7 @@ reconciliation decisions (ADD/UPDATE/DELETE/NOOP), and hybrid retrieved memories
 from __future__ import annotations
 
 from typing import List, Literal, Optional
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
 
 

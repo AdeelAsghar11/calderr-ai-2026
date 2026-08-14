@@ -19,6 +19,7 @@ try:
 except ImportError:
     resource = None
 
+# pyrefly: ignore [missing-import]
 from src.schema import GeneratedComponent, QAReport, TaskList, TestResult
 
 
@@ -166,6 +167,7 @@ def run_qa_agent(
         if not api_key:
             raise RuntimeError("GROQ_API_KEY environment variable is required for real mode execution.")
 
+        # pyrefly: ignore [missing-import]
         from langchain_groq import ChatGroq
 
         llm = ChatGroq(

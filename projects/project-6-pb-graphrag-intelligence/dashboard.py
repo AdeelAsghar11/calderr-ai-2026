@@ -12,7 +12,9 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+# pyrefly: ignore [missing-import]
 import streamlit as st
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
 
 PROJ_DIR = Path(__file__).resolve().parent

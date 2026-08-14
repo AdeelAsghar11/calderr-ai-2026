@@ -33,12 +33,19 @@ import os
 import re
 from typing import Any, Literal
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from langchain_core.tools import tool
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 load_dotenv()
@@ -281,7 +288,9 @@ def run_real_hierarchical_team(requirements: str) -> ReleaseReport:
             "GROQ_API_KEY environment variable is missing. Set it or run without --real for stub mode."
         )
 
+    # pyrefly: ignore [missing-import]
     from langchain.agents import create_agent
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)

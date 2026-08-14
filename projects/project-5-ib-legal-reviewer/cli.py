@@ -5,10 +5,15 @@ Renders the debate cross-examination transcript and final legal report using Ric
 
 import sys
 from pathlib import Path
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.table import Table
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.text import Text
 
 # Add project root to sys.path
@@ -17,8 +22,10 @@ if str(PROJECT_DIR) not in sys.path:
     sys.path.insert(0, str(PROJECT_DIR))
 
 try:
+    # pyrefly: ignore [missing-import]
     from agents import run_legal_review
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from project_5_ib_legal_reviewer.agents import run_legal_review
 
 app = typer.Typer(

@@ -56,12 +56,19 @@ import os
 import random
 from typing import Annotated, Any, Callable, Literal, TypedDict
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from langgraph.graph import END, START, StateGraph
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 load_dotenv()
@@ -185,6 +192,7 @@ def make_real_runner(
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
         raise RuntimeError("GROQ_API_KEY environment variable is required for --real mode.")
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     client = ChatGroq(model="llama-3.3-70b-versatile", temperature=0, api_key=api_key)

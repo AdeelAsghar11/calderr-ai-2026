@@ -46,6 +46,7 @@ except ModuleNotFoundError:
     sys.modules["langchain_community.chat_models.vertexai"] = mock_chat_vertex
 
 try:
+    # pyrefly: ignore [missing-import]
     import langchain_community.llms.vertexai
 except ModuleNotFoundError:
     mock_llms_vertex = types.ModuleType("langchain_community.llms.vertexai")
@@ -54,10 +55,15 @@ except ModuleNotFoundError:
 
 from pathlib import Path
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from dotenv import find_dotenv, load_dotenv
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 load_dotenv(find_dotenv())
@@ -72,7 +78,9 @@ RESULTS_FILE = Path("ragas_results.json")
 # ── RAGAS setup ───────────────────────────────────────────────────────────────
 def get_evaluator_llm():
     """Wrap Groq as a RAGAS-compatible evaluator LLM."""
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
+    # pyrefly: ignore [missing-import]
     from ragas.llms import LangchainLLMWrapper
 
     key = os.getenv("GROQ_API_KEY")
@@ -86,7 +94,9 @@ def get_evaluator_llm():
 
 def get_evaluator_embeddings():
     """Wrap HuggingFace embeddings as RAGAS-compatible embeddings."""
+    # pyrefly: ignore [missing-import]
     from langchain_huggingface import HuggingFaceEmbeddings
+    # pyrefly: ignore [missing-import]
     from ragas.embeddings import LangchainEmbeddingsWrapper
 
     hf = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
@@ -100,6 +110,7 @@ def build_ragas_dataset(data: list[dict], include_recall: bool = True):
     """
     try:
         # ── Try RAGAS 0.2.x API ───────────────────────────────────────────────
+        # pyrefly: ignore [missing-import]
         from ragas.dataset_schema import EvaluationDataset, SingleTurnSample
 
         samples = []
@@ -115,6 +126,7 @@ def build_ragas_dataset(data: list[dict], include_recall: bool = True):
 
     except ImportError:
         # ── Fall back to RAGAS 0.1.x API ─────────────────────────────────────
+        # pyrefly: ignore [missing-import]
         from datasets import Dataset
 
         payload = {
@@ -132,6 +144,7 @@ def build_ragas_dataset(data: list[dict], include_recall: bool = True):
 def get_metrics(include_recall: bool, api_version: str, evaluator_llm, evaluator_embeddings):
     """Return metric objects configured for the detected RAGAS version."""
     if api_version == "v2":
+        # pyrefly: ignore [missing-import]
         from ragas.metrics import (
             Faithfulness,
             AnswerRelevancy,
@@ -143,9 +156,11 @@ def get_metrics(include_recall: bool, api_version: str, evaluator_llm, evaluator
             LLMContextPrecisionWithoutReference(llm=evaluator_llm),
         ]
         if include_recall:
+            # pyrefly: ignore [missing-import]
             from ragas.metrics import LLMContextRecall
             metrics.append(LLMContextRecall(llm=evaluator_llm))
     else:
+        # pyrefly: ignore [missing-import]
         from ragas.metrics import faithfulness, answer_relevancy, context_precision
         faithfulness.llm       = evaluator_llm
         answer_relevancy.llm   = evaluator_llm
@@ -154,6 +169,7 @@ def get_metrics(include_recall: bool, api_version: str, evaluator_llm, evaluator
         metrics = [faithfulness, answer_relevancy, context_precision]
 
         if include_recall:
+            # pyrefly: ignore [missing-import]
             from ragas.metrics import context_recall
             context_recall.llm = evaluator_llm
             metrics.append(context_recall)
@@ -298,7 +314,9 @@ def run(
     console.print("[dim](Progress shown in terminal — each dot is one metric call)[/dim]\n")
 
     # Run with limited concurrency to avoid Groq rate limits/timeouts
+    # pyrefly: ignore [missing-import]
     from ragas import evaluate
+    # pyrefly: ignore [missing-import]
     from ragas.run_config import RunConfig
     
     run_config = RunConfig(max_workers=2, timeout=180)

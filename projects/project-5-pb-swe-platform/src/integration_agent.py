@@ -7,6 +7,7 @@ Acts as an automated compliance auditor to verify cross-component contract consi
 """
 
 import os
+# pyrefly: ignore [missing-import]
 from src.schema import GeneratedComponent, IntegrationResult, SystemContract
 
 

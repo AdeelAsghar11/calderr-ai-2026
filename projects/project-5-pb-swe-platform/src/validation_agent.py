@@ -14,6 +14,7 @@ import urllib.error
 import urllib.request
 from typing import List, Tuple
 
+# pyrefly: ignore [missing-import]
 from src.schema import DockerBuildResult, EndpointCheck, SystemContract, ValidationReport
 
 

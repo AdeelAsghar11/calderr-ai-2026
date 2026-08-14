@@ -19,10 +19,15 @@ Usage:
 import logging
 from typing import Optional, TypedDict
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from langgraph.graph import StateGraph, START, END
 
 load_dotenv()
@@ -64,6 +69,7 @@ class TaglineState(TypedDict, total=False):
 # Real backend (Groq). Imported lazily, not needed for the smoke test.
 # ---------------------------------------------------------------------------
 def default_generate(product_name: str, brief: str, feedback: Optional[str] = None) -> str:
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.7)

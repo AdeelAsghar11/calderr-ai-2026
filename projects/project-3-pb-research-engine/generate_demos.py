@@ -20,8 +20,11 @@ import time
 import uuid
 from pathlib import Path
 
+# pyrefly: ignore [missing-import]
 from dotenv import find_dotenv, load_dotenv
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 load_dotenv(find_dotenv())

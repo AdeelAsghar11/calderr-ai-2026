@@ -30,9 +30,13 @@ import sys
 import uuid
 from typing import Annotated, Callable, Literal, Optional, TypedDict
 
+# pyrefly: ignore [missing-import]
 from langgraph.checkpoint.sqlite import SqliteSaver
+# pyrefly: ignore [missing-import]
 from langgraph.graph import END, START, StateGraph
+# pyrefly: ignore [missing-import]
 from langgraph.types import Command, interrupt
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
 
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "moderation_state.db")
@@ -70,6 +74,7 @@ class ClassificationResult(BaseModel):
 def make_real_classifier() -> Callable[[str], tuple[str, str]]:
     """Groq-backed classifier -- matches the rest of the repo's stack
     (llama-3.3-70b-versatile via ChatGroq). Requires GROQ_API_KEY."""
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     if not os.environ.get("GROQ_API_KEY"):

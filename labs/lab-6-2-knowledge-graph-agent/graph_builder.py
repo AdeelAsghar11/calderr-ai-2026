@@ -11,14 +11,20 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Dict, List, Set, Tuple
 
+# pyrefly: ignore [missing-import]
 import networkx as nx
+# pyrefly: ignore [missing-import]
 from pyvis.network import Network
 
 try:
+    # pyrefly: ignore [missing-import]
     from .extractor import extract_from_paragraph
+    # pyrefly: ignore [missing-import]
     from .models import ExtractedEntity, ExtractedRelationship
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from extractor import extract_from_paragraph
+    # pyrefly: ignore [missing-import]
     from models import ExtractedEntity, ExtractedRelationship
 
 

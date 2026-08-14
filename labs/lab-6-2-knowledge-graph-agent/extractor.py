@@ -13,8 +13,10 @@ import re
 from typing import List, Tuple
 
 try:
+    # pyrefly: ignore [missing-import]
     from .models import ExtractedEntity, ExtractedRelationship
 except ImportError:
+    # pyrefly: ignore [missing-import]
     from models import ExtractedEntity, ExtractedRelationship
 
 # Known entity dictionary for deterministic stub extraction
@@ -151,6 +153,7 @@ def _extract_real(
         raise RuntimeError("GROQ_API_KEY environment variable is required for --real mode.")
 
     import json
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     prompt = (

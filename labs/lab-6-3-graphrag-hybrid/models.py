@@ -7,6 +7,7 @@ Defines schemas for benchmark question records, query router decisions, and retr
 from __future__ import annotations
 
 from typing import List, Literal
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
 
 

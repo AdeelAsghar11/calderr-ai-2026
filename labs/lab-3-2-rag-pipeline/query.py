@@ -24,13 +24,20 @@ from __future__ import annotations
 
 import textwrap
 
+# pyrefly: ignore [missing-import]
 import chromadb
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
+# pyrefly: ignore [missing-import]
 from ingest import CHROMA_PATH, EMBEDDING_MODEL, collection_name
 
 app     = typer.Typer(help="ChromaDB query CLI — Lab 3.2", add_completion=False)

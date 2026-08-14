@@ -16,6 +16,7 @@ import shutil
 import sys
 from pathlib import Path
 
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
 
 PROJ_DIR = Path(__file__).resolve().parent

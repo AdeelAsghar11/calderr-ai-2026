@@ -7,6 +7,7 @@ This contract serves as the strict operational boundary for Backend and Frontend
 """
 
 import os
+# pyrefly: ignore [missing-import]
 from src.schema import EndpointSpec, SystemContract, TaskList
 
 
@@ -66,6 +67,7 @@ def run_architect_agent(task_list: TaskList, use_real: bool = False) -> SystemCo
     if not api_key:
         raise RuntimeError("GROQ_API_KEY environment variable is required for real mode execution.")
 
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     llm = ChatGroq(

@@ -36,11 +36,17 @@ if sys.platform == "win32":
         except Exception:
             pass
 
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from rich.columns import Columns
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 # pyrefly: ignore [missing-import]
@@ -211,7 +217,9 @@ def visualize(
     together in the embedding space.  Run after first `search` to reuse cache.
     """
     try:
+        # pyrefly: ignore [missing-import]
         import matplotlib.pyplot as plt
+        # pyrefly: ignore [missing-import]
         from sklearn.decomposition import PCA
     except ImportError:
         console.print("[red]Install extras:  pip install matplotlib scikit-learn[/red]")
@@ -228,6 +236,7 @@ def visualize(
 
     # ── Plot ──────────────────────────────────────────────────────────────────
     try:
+        # pyrefly: ignore [missing-import]
         import matplotlib
         cmap = matplotlib.colormaps["tab20"]
     except (ImportError, AttributeError, KeyError):

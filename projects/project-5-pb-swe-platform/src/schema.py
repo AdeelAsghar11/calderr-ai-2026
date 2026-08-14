@@ -6,6 +6,7 @@ Using strict typing ensures downstream agents (Backend, Frontend, Integration) c
 """
 
 from typing import Literal
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
 
 

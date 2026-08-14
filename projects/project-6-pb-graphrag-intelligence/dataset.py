@@ -8,6 +8,7 @@ Validates programmatically that every question grounds unambiguously to a single
 from __future__ import annotations
 
 from typing import List
+# pyrefly: ignore [missing-import]
 import networkx as nx
 
 try:

@@ -10,17 +10,24 @@ Tests final control plane, dashboard rendering, GitHub Agent dry-run, and gracef
 
 import os
 import sys
+# pyrefly: ignore [missing-import]
 import pytest
+# pyrefly: ignore [missing-import]
 from fastapi.testclient import TestClient
 from unittest.mock import MagicMock
 
 # Ensure project directory is in sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+# pyrefly: ignore [missing-import]
 from src.api import app
+# pyrefly: ignore [missing-import]
 from src.dashboard import render_dashboard_view
+# pyrefly: ignore [missing-import]
 from src.github_agent import run_github_agent
+# pyrefly: ignore [missing-import]
 from src.pipeline import run_full_pipeline
+# pyrefly: ignore [missing-import]
 from src.schema import GitHubPublishPlan, PipelineRun
 
 FIXED_TODO_SPEC = (

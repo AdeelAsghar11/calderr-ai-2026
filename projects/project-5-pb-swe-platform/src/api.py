@@ -9,14 +9,19 @@ import os
 import sys
 import uuid
 from typing import Any, Dict, List, Optional
+# pyrefly: ignore [missing-import]
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect, status
+# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
 
 # Ensure src modules are resolvable
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+# pyrefly: ignore [missing-import]
 from src.pipeline import run_full_pipeline
+# pyrefly: ignore [missing-import]
 from src.schema import PipelineRun
 
 app = FastAPI(

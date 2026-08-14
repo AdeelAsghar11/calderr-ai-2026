@@ -45,11 +45,17 @@ except ImportError:
     resource = None
 from typing import Annotated, Callable, Optional, TypedDict
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from langgraph.graph import END, START, StateGraph
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from rich.table import Table
 
 # pyrefly: ignore [missing-import]
@@ -237,6 +243,7 @@ _FENCE_RE = re.compile(r"^```(?:python)?\n|\n```$", re.MULTILINE)
 
 
 def default_generate(problem: dict, previous_code: Optional[str], error_feedback: Optional[str]) -> str:
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     if not os.environ.get("GROQ_API_KEY"):

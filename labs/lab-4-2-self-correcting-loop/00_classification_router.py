@@ -13,11 +13,17 @@ Usage:
 
 from typing import Literal, TypedDict
 
+# pyrefly: ignore [missing-import]
 import typer
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from rich.console import Console
+# pyrefly: ignore [missing-import]
 from rich.panel import Panel
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel, Field
+# pyrefly: ignore [missing-import]
 from langgraph.graph import StateGraph, START, END
 
 load_dotenv()
@@ -64,6 +70,7 @@ class RouterState(TypedDict, total=False):
 # API key just to be imported for testing with fakes.
 # ---------------------------------------------------------------------------
 def default_classify(query: str) -> str:
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
 
     llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
@@ -73,7 +80,9 @@ def default_classify(query: str) -> str:
 
 
 def default_respond(query: str, category: str) -> str:
+    # pyrefly: ignore [missing-import]
     from langchain_groq import ChatGroq
+    # pyrefly: ignore [missing-import]
     from langchain_core.messages import SystemMessage, HumanMessage
 
     llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.3)

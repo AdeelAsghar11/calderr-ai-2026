@@ -8,6 +8,7 @@ Live API calls are explicitly gated by the --live flag and require GITHUB_TOKEN 
 
 import os
 from typing import Any, Optional
+# pyrefly: ignore [missing-import]
 from src.schema import GitHubPublishPlan, PipelineRun
 
 
@@ -102,6 +103,7 @@ def run_github_agent(
             body=pr_body,
         )
     else:
+        # pyrefly: ignore [missing-import]
         import httpx
         # Execute live REST API calls to GitHub
         headers = {

@@ -11,12 +11,15 @@ Tests offline stub pipeline execution for the fixed Todo List feature spec:
 import ast
 import os
 import sys
+# pyrefly: ignore [missing-import]
 import pytest
 
 # Insert project directory to sys.path so src imports resolve cleanly
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+# pyrefly: ignore [missing-import]
 from src.pipeline import run_phase1_pipeline
+# pyrefly: ignore [missing-import]
 from src.schema import SystemContract, TaskList
 
 FIXED_TODO_SPEC = (

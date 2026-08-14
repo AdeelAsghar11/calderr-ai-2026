@@ -6,6 +6,7 @@ Phase 3 Verification Tests
 import os
 import sys
 import uuid
+# pyrefly: ignore [missing-import]
 import pytest
 
 # Add project root to sys.path

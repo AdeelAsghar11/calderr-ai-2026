@@ -26,11 +26,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
+# pyrefly: ignore [missing-import]
 from langchain_core.documents import Document
 
 
 def load_pdf(path: Path) -> str:
     """Extract text from a PDF, page by page, using pypdf (pure Python)."""
+    # pyrefly: ignore [missing-import]
     from pypdf import PdfReader
 
     reader = PdfReader(str(path))
@@ -43,6 +45,7 @@ def load_pdf(path: Path) -> str:
 
 def load_docx(path: Path) -> str:
     """Extract text from a Word document, paragraph by paragraph."""
+    # pyrefly: ignore [missing-import]
     from docx import Document as DocxDocument
 
     doc = DocxDocument(str(path))
